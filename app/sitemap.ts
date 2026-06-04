@@ -1,7 +1,7 @@
 import { getHomeProblemPosts } from "@/lib/posts";
 
 export default function sitemap() {
-  const baseUrl = "http://localhost:3000";
+  const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
   const posts = getHomeProblemPosts();
 
