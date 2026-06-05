@@ -41,7 +41,7 @@ export default async function ArticlePage({
   const headings = post.content.match(/^##\s.+/gm) || [];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-950">
       {/* READING PROGRESS BAR */}
       <ReadingProgress />
 
@@ -73,7 +73,7 @@ export default async function ArticlePage({
               </div>
             </header>
 
-            <hr className="my-6" />
+            <hr className="my-6 border-white/10" />
 
             {/* CONTENT */}
             <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-invert">
@@ -99,8 +99,8 @@ export default async function ArticlePage({
 
             {/* RELATED */}
             {related.length > 0 && (
-              <section className="mt-12 border-t pt-6">
-                <h2 className="text-xl font-semibold mb-4">
+              <section className="mt-12 border-t border-white/10 pt-6">
+                <h2 className="text-xl font-semibold mb-4 text-white">
                   Related home problems
                 </h2>
 
@@ -109,9 +109,11 @@ export default async function ArticlePage({
                     <Link
                       key={r.slug}
                       href={`/home-problems/${r.slug}`}
-                      className="bg-[#111827] border border-white/10 rounded-lg p-4 hover:bg-[#1f2937] hover:scale-[1.02] transition-all duration-300"
+                      className="bg-[#1f2937] border border-white/10 rounded-lg p-4 hover:bg-[#374151] hover:scale-[1.02] transition-all duration-300"
                     >
-                      <h3 className="font-semibold">{r.title}</h3>
+                      <h3 className="font-semibold text-white">
+                        {r.title}
+                      </h3>
                       <p className="text-sm text-gray-300">
                         {r.description}
                       </p>
@@ -137,24 +139,24 @@ export default async function ArticlePage({
               />
 
               <div className="mt-12 border-t border-white/10 pt-8">
-  <h2 className="text-xl font-semibold mb-4">
-    Continue Reading
-  </h2>
+                <h2 className="text-xl font-semibold mb-4 text-white">
+                  Continue Reading
+                </h2>
 
-  <Link
-    href="/categories/home-problems"
-    className="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition"
-  >
-    Browse More Articles →
-  </Link>
-</div>
+                <Link
+                  href="/categories/home-problems"
+                  className="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition"
+                >
+                  Browse More Articles →
+                </Link>
+              </div>
             </div>
           </article>
 
           {/* SIDEBAR (TOC) */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-6 bg-[#111827] border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
-              <h2 className="font-semibold mb-3">Contents</h2>
+            <div className="sticky top-6 bg-[#111827] border border-white/10 rounded-2xl p-5 shadow-xl">
+              <h2 className="font-semibold mb-3 text-white">Contents</h2>
 
               {headings.length > 0 ? (
                 <ul className="space-y-2 text-sm">
