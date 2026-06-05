@@ -57,14 +57,14 @@ export default async function ArticlePage({
         {/* ARTICLE LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           {/* MAIN CONTENT */}
-          <article className="lg:col-span-8 bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-8 py-10 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <article className="lg:col-span-8 bg-[#111827] border border-white/10 rounded-2xl px-8 py-10 shadow-xl hover:shadow-2xl transition-all duration-300">
             {/* HEADER */}
             <header className="mb-8">
-              <h1 className="text-4xl font-bold leading-tight">
+              <h1 className="text-4xl font-bold leading-tight text-white">
                 {post.title}
               </h1>
 
-              <p className="text-lg text-gray-600 mt-3">
+              <p className="text-lg text-gray-300 mt-3">
                 {post.description}
               </p>
 
@@ -76,7 +76,7 @@ export default async function ArticlePage({
             <hr className="my-6" />
 
             {/* CONTENT */}
-            <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24">
+            <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24 prose-invert">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
@@ -109,10 +109,10 @@ export default async function ArticlePage({
                     <Link
                       key={r.slug}
                       href={`/home-problems/${r.slug}`}
-                      className="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300"
+                      className="bg-[#111827] border border-white/10 rounded-lg p-4 hover:bg-[#1f2937] hover:scale-[1.02] transition-all duration-300"
                     >
                       <h3 className="font-semibold">{r.title}</h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-300">
                         {r.description}
                       </p>
                     </Link>
@@ -143,7 +143,7 @@ export default async function ArticlePage({
 
   <Link
     href="/categories/home-problems"
-    className="inline-block bg-blue-500 hover:bg-blue-400 px-6 py-3 rounded-lg transition"
+    className="inline-block bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-lg transition"
   >
     Browse More Articles →
   </Link>
@@ -153,7 +153,7 @@ export default async function ArticlePage({
 
           {/* SIDEBAR (TOC) */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-6 bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
+            <div className="sticky top-6 bg-[#111827] border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
               <h2 className="font-semibold mb-3">Contents</h2>
 
               {headings.length > 0 ? (
