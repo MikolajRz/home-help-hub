@@ -1,6 +1,7 @@
+import type { MetadataRoute } from "next";
 import { getHomeProblemPosts } from "@/lib/posts";
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
   const posts = getHomeProblemPosts();
