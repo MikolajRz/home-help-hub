@@ -257,10 +257,10 @@ export default async function ArticlePage({
 
             {/* RELATED */}
             {related.length > 0 && (
-              <section className="mt-6 border-t border-white/10 pt-3">
+              <section className="mt-2 border-t border-white/10 pt-2">
                 <h2 className="text-xl font-semibold">Related guides</h2>
 
-                <div className="grid gap-2 mt-2">
+                <div className="grid gap-1 mt-1">
                   {related.map((r) => (
                     <RelatedLinks
                       key={r.slug}
