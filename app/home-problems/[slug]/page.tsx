@@ -257,10 +257,10 @@ export default async function ArticlePage({
 
             {/* RELATED */}
             {related.length > 0 && (
-              <section className="mt-12 border-t border-white/10 pt-6">
+              <section className="mt-6 border-t border-white/10 pt-3">
                 <h2 className="text-xl font-semibold">Related guides</h2>
 
-                <div className="grid gap-4 mt-4">
+                <div className="grid gap-2 mt-2">
                   {related.map((r) => (
                     <RelatedLinks
                       key={r.slug}
@@ -280,58 +280,60 @@ export default async function ArticlePage({
           </article>
 
           {/* SIDEBAR */}
-          <aside className="lg:col-span-4 space-y-6">
-            <div className="sticky top-6 bg-[#111827] border border-white/10 rounded-2xl p-5">
-              <h2 className="font-semibold mb-3">Contents</h2>
+          <aside className="lg:col-span-4">
+            <div className="sticky top-6 space-y-6">
+              <div className="bg-[#111827] border border-white/10 rounded-2xl p-5">
+                <h2 className="font-semibold mb-3">Contents</h2>
 
-              {headings.length > 0 ? (
-                <ul className="space-y-2 text-sm">
-                  {headings.map((h, i) => {
-                    const id = h
-                      .replace("##", "")
-                      .trim()
-                      .toLowerCase()
-                      .replace(/\s+/g, "-");
+                {headings.length > 0 ? (
+                  <ul className="space-y-2 text-sm">
+                    {headings.map((h, i) => {
+                      const id = h
+                        .replace("##", "")
+                        .trim()
+                        .toLowerCase()
+                        .replace(/\s+/g, "-");
 
-                    return (
-                      <li key={i}>
-                        <a
-                          href={`#${id}`}
-                          className="block text-gray-400 hover:text-white transition"
-                        >
-                          {h.replace("##", "").trim()}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p className="text-gray-400 text-sm">
-                  No sections available
-                </p>
-              )}
+                      return (
+                        <li key={i}>
+                          <a
+                            href={`#${id}`}
+                            className="block text-gray-400 hover:text-white transition"
+                          >
+                            {h.replace("##", "").trim()}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="text-gray-400 text-sm">
+                    No sections available
+                  </p>
+                )}
+              </div>
+
+              {/* FAQ */}
+              <FAQ
+                items={[
+                  {
+                    question: "Why is my radiator cold at the top?",
+                    answer:
+                      "This is usually caused by trapped air inside the radiator.",
+                  },
+                  {
+                    question: "How long does it take to fix it?",
+                    answer:
+                      "Most issues can be resolved within 10–20 minutes.",
+                  },
+                  {
+                    question: "Do I need a professional?",
+                    answer:
+                      "Usually not — unless the problem persists after bleeding and pressure check.",
+                  },
+                ]}
+              />
             </div>
-
-            {/* FAQ */}
-            <FAQ
-              items={[
-                {
-                  question: "Why is my radiator cold at the top?",
-                  answer:
-                    "This is usually caused by trapped air inside the radiator.",
-                },
-                {
-                  question: "How long does it take to fix it?",
-                  answer:
-                    "Most issues can be resolved within 10–20 minutes.",
-                },
-                {
-                  question: "Do I need a professional?",
-                  answer:
-                    "Usually not — unless the problem persists after bleeding and pressure check.",
-                },
-              ]}
-            />
           </aside>
         </div>
       </div>

@@ -13,7 +13,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 pt-10 pb-20 relative">
+        {/* ZMIANA: max-w-7xl */}
+        <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 relative">
           <span className="inline-block bg-[#111827] border border-white/10 rounded-full px-3 py-1 text-sm text-gray-300">
             DIY Knowledge Base • Home Repairs • Gardening • Calculators
           </span>
@@ -54,7 +55,8 @@ export default function HomePage() {
       </section>
 
       {/* WHAT THIS SITE IS */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-bold">What this site is</h2>
 
@@ -80,7 +82,8 @@ export default function HomePage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <h2 className="text-3xl font-bold mb-8">How Home Help Hub Works</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -112,7 +115,8 @@ export default function HomePage() {
       </section>
 
       {/* TOPIC CLUSTERS PREVIEW */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <h2 className="text-3xl font-bold mb-8">Topic clusters</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -158,7 +162,8 @@ export default function HomePage() {
       </section>
 
       {/* FAQ MINI SECTION */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Quick FAQ</h2>
 
@@ -197,7 +202,8 @@ export default function HomePage() {
       </section>
 
       {/* CATEGORY CARDS */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <h2 className="text-3xl font-bold mb-8">Explore Categories</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -234,7 +240,8 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED SECTION */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-16 → pb-12 */}
+      <section className="max-w-7xl mx-auto px-4 pb-12">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Most searched problems</h2>
 
@@ -268,7 +275,8 @@ export default function HomePage() {
       </section>
 
       {/* TRUST SECTION */}
-      <section className="max-w-6xl mx-auto px-4 pb-24">
+      {/* ZMIANA: max-w-6xl → max-w-7xl, pb-24 → pb-16 (zmniejszony dolny odstęp) */}
+      <section className="max-w-7xl mx-auto px-4 pb-16">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
           <h2 className="text-2xl font-bold">Why Home Help Hub exists</h2>
 
