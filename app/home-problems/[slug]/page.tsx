@@ -150,7 +150,7 @@ export default async function ArticlePage({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           {/* MAIN CONTENT */}
-          <article className="lg:col-span-8 bg-[#111827] border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
+          <article className="lg:col-span-8 bg-[#111827] border border-white/10 rounded-2xl px-8 py-6 shadow-xl">
             {/* HEADER */}
             <header className="mb-8">
               <h1 className="text-4xl font-bold leading-tight">
@@ -260,19 +260,20 @@ export default async function ArticlePage({
               <section className="mt-0 border-t border-white/10 pt-1">
                 <h2 className="text-xl font-semibold">Related guides</h2>
 
-                <div className="grid gap-0 mt-0">
+                <div className="flex flex-col mt-0">
                   {related.map((r) => (
-                    <RelatedLinks
-                      key={r.slug}
-                      items={[
-                        {
-                          href: `/home-problems/${r.slug}`,
-                          label: r.title,
-                          description: r.description,
-                          type: "fix",
-                        },
-                      ]}
-                    />
+                    <div key={r.slug} className="mb-0 last:mb-0">
+                      <RelatedLinks
+                        items={[
+                          {
+                            href: `/home-problems/${r.slug}`,
+                            label: r.title,
+                            description: r.description,
+                            type: "fix",
+                          },
+                        ]}
+                      />
+                    </div>
                   ))}
                 </div>
               </section>
