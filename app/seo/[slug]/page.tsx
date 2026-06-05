@@ -1,6 +1,12 @@
 import { notFound } from "next/navigation";
 
-const data = {
+type SEOPageData = {
+  title: string;
+  description: string;
+  steps: string[];
+};
+
+const data: Record<string, SEOPageData> = {
   "how-to-fix-low-water-pressure": {
     title: "How to fix low water pressure",
     description: "Step-by-step guide to increase water pressure in your home",
