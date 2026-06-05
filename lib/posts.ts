@@ -47,10 +47,29 @@ export function getPostBySlug(slug: string): Post & { content: string } | null {
   };
 }
 
-export function getRelatedPosts(currentSlug: string, limit = 3) {
+export function getRelatedPosts(currentSlug: string) {
   const posts = getHomeProblemPosts();
 
-  return posts
+  const current = posts.find((p) => p.slug === currentSlug);
+  if (!current) return [];
+
+  // proste SEO groupowanie po słowach
+  const scored = posts
     .filter((p) => p.slug !== currentSlug)
-    .slice(0, limit);
+    .map((p) => {
+      let score = 0;
+
+      const currentWords = current.title.toLowerCase().split(" ");
+      const postWords = p.title.toLowerCase().split(" ");
+
+      currentWords.forEach((w) => {
+        if (postWords.includes(w)) score += 2;
+      });
+
+      return { ...p, score };
+    });
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
 }

@@ -5,6 +5,9 @@ import Link from "next/link";
 
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import InternalLinks from "@/components/InternalLinks";
+
+const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
 export async function generateMetadata({
   params,
@@ -34,8 +37,6 @@ export default async function ArticlePage({
 
   const related = getRelatedPosts(slug);
 
-  const baseUrl = "https://home-help-hub-smoky.vercel.app";
-
   return (
     <div>
       <Breadcrumbs
@@ -46,7 +47,7 @@ export default async function ArticlePage({
         ]}
       />
 
-      {/* 🔥 SEO STRUCTURED DATA (FIXED) */}
+      {/* 🔥 BREADCRUMB SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -77,6 +78,45 @@ export default async function ArticlePage({
         }}
       />
 
+      {/* 🔥 FAQ SCHEMA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `What causes ${post.title.toLowerCase()}?`,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: post.description,
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do I fix it?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "Follow basic troubleshooting steps and check common household issues.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do I need a professional?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text:
+                    "If basic fixes do not work, contact a qualified technician.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       <article className="mx-auto max-w-3xl px-4 py-10">
         <h1 className="text-3xl font-bold">{post.title}</h1>
 
@@ -91,7 +131,7 @@ export default async function ArticlePage({
           </ReactMarkdown>
         </div>
 
-        {/* 🔗 RELATED ARTICLES (SEO BOOST) */}
+        {/* 🔗 RELATED ARTICLES */}
         {related.length > 0 && (
           <section className="mt-12 border-t pt-6">
             <h2 className="text-xl font-semibold mb-4">
@@ -114,6 +154,20 @@ export default async function ArticlePage({
             </div>
           </section>
         )}
+
+        {/* 🔗 INTERNAL LINKS */}
+        <InternalLinks
+          links={[
+            {
+              href: "/home-problems/boiler-not-working",
+              label: "Boiler not working",
+            },
+            {
+              href: "/home-problems/water-pressure-low",
+              label: "Low water pressure",
+            },
+          ]}
+        />
       </article>
     </div>
   );
