@@ -7,6 +7,7 @@ import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
 import ReadingProgress from "@/components/ReadingProgress";
+import BackToTop from "@/components/BackToTop";
 
 const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
@@ -40,10 +41,16 @@ export default async function ArticlePage({
 
   const headings = post.content.match(/^##\s.+/gm) || [];
 
+  const readingTime = Math.max(
+  1,
+  Math.ceil(post.content.split(" ").length / 200)
+);
+
   return (
     <div className="min-h-screen bg-gray-950">
       {/* READING PROGRESS BAR */}
       <ReadingProgress />
+      <BackToTop />
 
       <div className="max-w-6xl mx-auto px-4">
         <Breadcrumbs
@@ -66,6 +73,10 @@ export default async function ArticlePage({
 
               <p className="text-lg text-gray-300 mt-3">
                 {post.description}
+              </p>
+
+              <p className="text-sm text-gray-500 mt-2">
+                ⏱ {readingTime} min read
               </p>
 
               <div className="mt-4 text-sm text-gray-400">
@@ -163,13 +174,13 @@ export default async function ArticlePage({
                   {headings.map((h, i) => (
                     <li key={i}>
                       <a
-                        href={`#${h
-                          .replace("##", "")
-                          .trim()
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`}
-                        className="block text-gray-300 hover:text-white hover:translate-x-1 transition-all duration-200"
-                      >
+  href={`#${h
+    .replace("##", "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")}`}
+  className="block text-gray-600 hover:text-indigo-600 hover:translate-x-1 transition-all duration-200"
+>
                         {h.replace("##", "").trim()}
                       </a>
                     </li>
