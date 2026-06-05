@@ -199,7 +199,7 @@ export default async function ArticlePage({
             </div>
 
             {/* WHAT NOT TO DO */}
-            <section className="mt-10 border-t border-white/10 pt-6">
+            <section className="mt-6 border-t border-white/10 pt-4">
               <h2 className="text-xl font-semibold">What NOT to do</h2>
               <ul className="mt-3 list-disc ml-6 text-gray-300 space-y-2">
                 <li>Do not force valves that are stuck</li>
