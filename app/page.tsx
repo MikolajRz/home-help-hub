@@ -8,10 +8,12 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="bg-gray-50 min-h-screen">
+    <main className="min-h-screen">
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-4 pt-20 pb-16">
-        <div className="max-w-3xl">
+      <section className="relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
+
+  <div className="max-w-6xl mx-auto px-4 pt-24 pb-20 animate-fade-in relative">
           <span className="inline-block bg-white border rounded-full px-3 py-1 text-sm">
             DIY • Home Repairs • Gardening
           </span>
@@ -28,7 +30,7 @@ export default function HomePage() {
           <div className="mt-8 flex gap-4 flex-wrap">
             <Link
               href="/categories/home-problems"
-              className="bg-black text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
+              className="bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-lg transition-all duration-300"
             >
               Browse Guides
             </Link>
@@ -52,7 +54,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           <Link
             href="/categories/home-problems"
-            className="bg-white rounded-xl border p-6 hover:shadow-md transition"
+            className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:scale-[1.02] hover:border-blue-400/40 transition-all duration-300"
           >
             <h3 className="text-xl font-semibold">
               Home Problems

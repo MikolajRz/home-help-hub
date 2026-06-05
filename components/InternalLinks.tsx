@@ -23,7 +23,7 @@ export default function InternalLinks({
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-lg border bg-white p-4 hover:shadow-md transition"
+            className="text-blue-400 hover:text-blue-300 hover:translate-x-1 transition-all"
           >
             <h3 className="font-medium">{link.label}</h3>
 

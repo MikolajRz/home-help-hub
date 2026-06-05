@@ -57,7 +57,7 @@ export default async function ArticlePage({
         {/* ARTICLE LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           {/* MAIN CONTENT */}
-          <article className="lg:col-span-8 bg-white rounded-2xl border px-8 py-10 shadow-sm">
+          <article className="lg:col-span-8 bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-8 py-10 shadow-xl hover:shadow-2xl transition-all duration-300">
             {/* HEADER */}
             <header className="mb-8">
               <h1 className="text-4xl font-bold leading-tight">
@@ -109,7 +109,7 @@ export default async function ArticlePage({
                     <Link
                       key={r.slug}
                       href={`/home-problems/${r.slug}`}
-                      className="border rounded-lg p-4 hover:shadow-md transition bg-white"
+                      className="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300"
                     >
                       <h3 className="font-semibold">{r.title}</h3>
                       <p className="text-sm text-gray-600">
@@ -135,12 +135,25 @@ export default async function ArticlePage({
                   },
                 ]}
               />
+
+              <div className="mt-12 border-t border-white/10 pt-8">
+  <h2 className="text-xl font-semibold mb-4">
+    Continue Reading
+  </h2>
+
+  <Link
+    href="/categories/home-problems"
+    className="inline-block bg-blue-500 hover:bg-blue-400 px-6 py-3 rounded-lg transition"
+  >
+    Browse More Articles →
+  </Link>
+</div>
             </div>
           </article>
 
           {/* SIDEBAR (TOC) */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-6 bg-white rounded-xl border p-5 shadow-sm">
+            <div className="sticky top-6 bg-white/5 backdrop-blur border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
               <h2 className="font-semibold mb-3">Contents</h2>
 
               {headings.length > 0 ? (
@@ -153,7 +166,7 @@ export default async function ArticlePage({
                           .trim()
                           .toLowerCase()
                           .replace(/\s+/g, "-")}`}
-                        className="block text-gray-700 hover:text-black transition relative pl-2 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-black hover:before:h-full before:transition-all"
+                        className="block text-gray-300 hover:text-white hover:translate-x-1 transition-all duration-200"
                       >
                         {h.replace("##", "").trim()}
                       </a>
