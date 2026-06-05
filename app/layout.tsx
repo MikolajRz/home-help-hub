@@ -17,7 +17,7 @@ const geistMono = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://homehelphub.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
 
   title: {
     default: "Home Help Hub",
@@ -38,6 +38,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <meta name="theme-color" content="#0b0f19" />
       <body className="min-h-screen flex flex-col bg-[#0b0f19] text-gray-100">
         
         {/* BACKGROUND GLOW EFFECT */}

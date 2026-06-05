@@ -174,13 +174,13 @@ export default async function ArticlePage({
                   {headings.map((h, i) => (
                     <li key={i}>
                       <a
-  href={`#${h
-    .replace("##", "")
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "-")}`}
-  className="block text-gray-600 hover:text-indigo-600 hover:translate-x-1 transition-all duration-200"
->
+                        href={`#${h
+                          .replace("##", "")
+                          .trim()
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`}
+                        className="block text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-200"
+                      >
                         {h.replace("##", "").trim()}
                       </a>
                     </li>

@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((post) => post?.slug) // 🔥 WAŻNE zabezpieczenie
     .map((post) => ({
       url: `${baseUrl}/home-problems/${post.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(post.date || Date.now()),
     }));
 
   return [

@@ -62,6 +62,17 @@ export function getRelatedPosts(currentSlug: string) {
       const currentWords = current.title.toLowerCase().split(" ");
       const postWords = p.title.toLowerCase().split(" ");
 
+      const keywords = currentWords;
+
+      const postWordsArray = postWords;
+
+      const scoreValue = postWordsArray.reduce((acc, word) => {
+        if (keywords.includes(word)) acc += 2;
+        return acc;
+      }, 0);
+
+      score = scoreValue;
+
       currentWords.forEach((w) => {
         if (postWords.includes(w)) score += 2;
       });
