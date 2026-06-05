@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type AuthorBoxProps = {
   name?: string;
@@ -56,6 +57,16 @@ export default function AuthorBox({
           <span className="px-2 py-1 bg-[#111827] border border-white/10 rounded-md">
             Updated regularly
           </span>
+        </div>
+
+        {/* LINK DO STRONY O AUTORZE */}
+        <div className="mt-4">
+          <Link
+            href="/about"
+            className="text-blue-400 hover:text-blue-300 text-sm transition"
+          >
+            Learn more about the author and editorial process
+          </Link>
         </div>
       </div>
     </section>
