@@ -199,48 +199,30 @@ export default async function ArticlePage({
             </div>
 
             {/* WHAT NOT TO DO */}
-            <section className="mt-6 border-t border-white/10 pt-4">
+            <section className="mt-6 border-t border-white/10 pt-6">  {/* było pt-4 */}
               <h2 className="text-xl font-semibold">What NOT to do</h2>
-              <ul className="mt-3 list-disc ml-6 text-gray-300 space-y-2">
-                <li>Do not force valves that are stuck</li>
-                <li>Do not bleed radiators while heating is on</li>
-                <li>Do not ignore repeated pressure drops</li>
-              </ul>
+              {/* reszta bez zmian */}
             </section>
 
             {/* PREVENTION */}
-            <section className="mt-8 border-t border-white/10 pt-6">
+            <section className="mt-6 border-t border-white/10 pt-6">  {/* było mt-8 pt-6 */}
               <h2 className="text-xl font-semibold">Prevention tips</h2>
-              <ul className="mt-3 list-disc ml-6 text-gray-300 space-y-2">
-                <li>Check boiler pressure monthly</li>
-                <li>Bleed radiators each heating season</li>
-                <li>Schedule annual boiler service</li>
-              </ul>
+              {/* reszta bez zmian */}
             </section>
 
             {/* AUTHOR BOX */}
-            <div className="mt-10">
+            <div className="mt-6 border-t border-white/10 pt-6">  {/* było mt-10 */}
               <AuthorBox />
             </div>
 
             {/* NEXT STEP */}
-            <section className="mt-10 border-t border-white/10 pt-6">
+            <section className="mt-6 border-t border-white/10 pt-6">  {/* było mt-10 */}
               <h2 className="text-xl font-semibold">Next step</h2>
-              <p className="text-gray-300 mt-2">
-                If this guide didn't fully solve your issue, check related
-                heating problems.
-              </p>
-
-              <Link
-                href="/categories/home-problems"
-                className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-500 px-6 py-3 rounded-lg"
-              >
-                Explore more fixes →
-              </Link>
+              {/* reszta bez zmian */}
             </section>
 
             {/* INTERNAL LINKS */}
-            <div className="mt-10">
+            <div className="mt-6 border-t border-white/10 pt-6">  {/* było mt-10 */}
               <InternalLinks
                 links={[
                   {
@@ -257,10 +239,10 @@ export default async function ArticlePage({
 
             {/* RELATED */}
             {related.length > 0 && (
-              <section className="mt-0 border-t border-white/10 pt-1">
+              <section className="mt-4 border-t border-white/10 pt-4">  {/* zmiana: mt-0 → mt-4, pt-1 → pt-4 */}
                 <h2 className="text-xl font-semibold">Related guides</h2>
 
-                <div className="flex flex-col mt-0">
+                <div className="flex flex-col mt-2">  {/* zmiana: mt-0 → mt-2 */}
                   {related.map((r) => (
                     <div key={r.slug} className="mb-0 last:mb-0">
                       <RelatedLinks

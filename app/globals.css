@@ -93,6 +93,12 @@ body {
   color: rgba(229, 231, 235, 0.92);
 }
 
+.prose hr {
+  margin-top: 1.5rem;    /* dodaj odstęp na górze */
+  margin-bottom: 1.5rem; /* odstęp na dole (istniejący) */
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Lists readability */
 .prose ul {
   margin: 0.5rem 0 0.75rem 1.5rem;  /* było 1rem 0 1.5rem 1.5rem */
