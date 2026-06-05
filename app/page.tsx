@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto px-4 pt-10 pb-20 relative">
+        <div className="max-w-7xl mx-auto px-4 pt-10 pb-20 relative">
           <span className="inline-block bg-[#111827] border border-white/10 rounded-full px-3 py-1 text-sm text-gray-300">
             DIY Knowledge Base • Home Repairs • Gardening • Calculators
           </span>

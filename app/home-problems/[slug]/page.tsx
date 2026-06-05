@@ -151,7 +151,6 @@ export default async function ArticlePage({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           {/* MAIN CONTENT */}
           <article className="lg:col-span-8 bg-[#111827] border border-white/10 rounded-2xl px-8 py-10 shadow-xl">
-
             {/* HEADER */}
             <header className="mb-8">
               <h1 className="text-4xl font-bold leading-tight">
@@ -228,7 +227,8 @@ export default async function ArticlePage({
             <section className="mt-10 border-t border-white/10 pt-6">
               <h2 className="text-xl font-semibold">Next step</h2>
               <p className="text-gray-300 mt-2">
-                If this guide didn’t fully solve your issue, check related heating problems.
+                If this guide didn't fully solve your issue, check related
+                heating problems.
               </p>
 
               <Link
@@ -258,9 +258,7 @@ export default async function ArticlePage({
             {/* RELATED */}
             {related.length > 0 && (
               <section className="mt-12 border-t border-white/10 pt-6">
-                <h2 className="text-xl font-semibold">
-                  Related guides
-                </h2>
+                <h2 className="text-xl font-semibold">Related guides</h2>
 
                 <div className="grid gap-4 mt-4">
                   {related.map((r) => (
@@ -282,7 +280,7 @@ export default async function ArticlePage({
           </article>
 
           {/* SIDEBAR */}
-          <aside className="lg:col-span-4">
+          <aside className="lg:col-span-4 space-y-6">
             <div className="sticky top-6 bg-[#111827] border border-white/10 rounded-2xl p-5">
               <h2 className="font-semibold mb-3">Contents</h2>
 
@@ -313,28 +311,28 @@ export default async function ArticlePage({
                 </p>
               )}
             </div>
-          </aside>
 
-          {/* FAQ */}
-          <FAQ
-            items={[
-              {
-                question: "Why is my radiator cold at the top?",
-                answer:
-                  "This is usually caused by trapped air inside the radiator.",
-              },
-              {
-                question: "How long does it take to fix it?",
-                answer:
-                  "Most issues can be resolved within 10–20 minutes.",
-              },
-              {
-                question: "Do I need a professional?",
-                answer:
-                  "Usually not — unless the problem persists after bleeding and pressure check.",
-              },
-            ]}
-          />
+            {/* FAQ */}
+            <FAQ
+              items={[
+                {
+                  question: "Why is my radiator cold at the top?",
+                  answer:
+                    "This is usually caused by trapped air inside the radiator.",
+                },
+                {
+                  question: "How long does it take to fix it?",
+                  answer:
+                    "Most issues can be resolved within 10–20 minutes.",
+                },
+                {
+                  question: "Do I need a professional?",
+                  answer:
+                    "Usually not — unless the problem persists after bleeding and pressure check.",
+                },
+              ]}
+            />
+          </aside>
         </div>
       </div>
     </div>
