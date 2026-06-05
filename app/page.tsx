@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           <Link
             href="/categories/home-problems"
-            className="bg-[#111827] border border-white/10 rounded-xl p-6 hover:bg-[#1f2937] hover:scale-[1.02] transition-all duration-300"
+            className="bg-white/5 backdrop-blur border border-white/10 rounded-xl p-6 hover:scale-[1.02] hover:border-blue-400/40 transition-all duration-300"
           >
             <h3 className="text-xl font-semibold">
               Home Problems
