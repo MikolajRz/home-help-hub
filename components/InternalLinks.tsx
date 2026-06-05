@@ -1,19 +1,38 @@
 import Link from "next/link";
 
-export default function InternalLinks({ links }: { links: { href: string; label: string }[] }) {
-  return (
-    <div className="mt-10 border-t pt-6">
-      <h3 className="font-semibold mb-3">Related articles</h3>
+type InternalLink = {
+  href: string;
+  label: string;
+};
 
-      <ul className="space-y-2">
-        {links.map((l) => (
-          <li key={l.href}>
-            <Link className="text-blue-600 hover:underline" href={l.href}>
-              {l.label}
-            </Link>
-          </li>
+export default function InternalLinks({
+  links,
+}: {
+  links: InternalLink[];
+}) {
+  if (!links.length) return null;
+
+  return (
+    <section className="mt-12 border-t pt-8">
+      <h2 className="text-xl font-semibold mb-4">
+        Continue reading
+      </h2>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="rounded-lg border bg-white p-4 hover:shadow-md transition"
+          >
+            <h3 className="font-medium">{link.label}</h3>
+
+            <p className="text-sm text-gray-500 mt-1">
+              Read related article →
+            </p>
+          </Link>
         ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   );
 }
