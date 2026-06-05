@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
+/* =========================
+   DESIGN TOKENS
+========================= */
 :root {
   --background: #0b0f19;
   --foreground: #e5e7eb;
   --card: #111827;
   --muted: #9ca3af;
   --primary: #60a5fa;
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -15,6 +19,33 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* =========================
+   BASE LAYOUT
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(
+      circle at top,
+      rgba(96, 165, 250, 0.10),
+      transparent 45%
+    ),
+    var(--background);
+
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   DARK MODE CONSISTENCY
+========================= */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -22,73 +53,123 @@
   }
 }
 
-body {
-  background: radial-gradient(
-      circle at top,
-      rgba(96, 165, 250, 0.08),
-      transparent 40%
-    ),
-    var(--background);
-
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui;
-}
-
-/* ARTICLE READING EXPERIENCE */
-
+/* =========================
+   TYPOGRAPHY (SEO READABILITY)
+========================= */
 .prose {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--foreground);
 }
 
+/* Headings hierarchy */
 .prose h1 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .prose h2 {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   margin-bottom: 1rem;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  scroll-margin-top: 6rem;
 }
 
+.prose h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Paragraph spacing (very important for UX + SEO dwell time) */
 .prose p {
-  margin: 1rem 0;
+  margin: 1.25rem 0;
+  color: rgba(229, 231, 235, 0.92);
 }
 
+/* Lists readability */
 .prose ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0 1.5rem 1.5rem;
 }
 
 .prose li {
   margin: 0.5rem 0;
+  color: rgba(229, 231, 235, 0.9);
 }
 
+/* Strong emphasis */
 .prose strong {
-  color: white;
+  color: #ffffff;
+  font-weight: 700;
 }
 
-/* CARD FEEL */
+/* Links inside content */
+.prose a {
+  color: #60a5fa;
+  text-decoration: underline;
+  text-decoration-color: rgba(96, 165, 250, 0.4);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+}
 
+.prose a:hover {
+  color: #93c5fd;
+  text-decoration-color: rgba(147, 197, 253, 0.9);
+}
+
+/* Blockquote (optional SEO trust signal) */
+.prose blockquote {
+  border-left: 3px solid rgba(96, 165, 250, 0.5);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: rgba(229, 231, 235, 0.75);
+  font-style: italic;
+}
+
+/* =========================
+   UI IMPROVEMENTS
+========================= */
+
+/* Cards consistency */
 .article-card {
-  background: white;
-  border-radius: 12px;
+  background: var(--card);
+  border-radius: 14px;
   padding: 2rem;
+  border: 1px solid var(--border);
 }
 
-/* SMOOTH SCROLL */
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* smooth UI feel */
-* {
-  scroll-behavior: smooth;
-}
-
-/* links */
+/* Links outside prose */
 a {
   transition: all 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+/* Focus states (important for SEO UX + accessibility) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* =========================
+   SCROLL BEHAVIOR FIX
+========================= */
+/* remove duplicate global conflict */
+* {
+  box-sizing: border-box;
+}
+
+/* optional smooth scrolling enhancement for anchors */
+:target {
+  scroll-margin-top: 80px;
 }

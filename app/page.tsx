@@ -8,12 +8,12 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0b1220] text-white">
+    <main className="min-h-screen bg-[#0b0f19] text-gray-100">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto px-4 pt-8 pb-20 relative">
+        <div className="max-w-6xl mx-auto px-4 pt-10 pb-20 relative">
           <span className="inline-block bg-[#111827] border border-white/10 rounded-full px-3 py-1 text-sm text-gray-300">
             DIY Knowledge Base • Home Repairs • Gardening • Calculators
           </span>
@@ -30,9 +30,9 @@ export default function HomePage() {
           </p>
 
           <p className="mt-4 text-gray-400 max-w-2xl">
-            No jargon. No unnecessary complexity. Just practical explanations
-            and clear actions you can follow at home — even if you have no
-            technical experience.
+            No jargon. No unnecessary complexity. Clear explanations and
+            practical actions you can follow at home — even without technical
+            experience.
           </p>
 
           <div className="mt-8 flex gap-4 flex-wrap">
@@ -53,6 +53,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* WHAT THIS SITE IS */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold">What this site is</h2>
+
+          <p className="mt-4 text-gray-300 leading-8">
+            Home Help Hub is a structured knowledge base for homeowners who want
+            to understand and fix everyday household problems without relying on
+            vague advice or expensive callouts.
+          </p>
+
+          <p className="mt-4 text-gray-300 leading-8">
+            Each guide is written in a step-by-step format: first we explain
+            <strong className="text-white"> what is happening</strong>, then
+            <strong className="text-white"> why it happens</strong>, and finally
+            <strong className="text-white"> how to fix it</strong>.
+          </p>
+
+          <p className="mt-4 text-gray-300 leading-8">
+            The goal is simple: help you solve the problem yourself in the
+            shortest possible time, with clear instructions and no unnecessary
+            complexity.
+          </p>
+        </div>
+      </section>
+
       {/* HOW IT WORKS */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
         <h2 className="text-3xl font-bold mb-8">How Home Help Hub Works</h2>
@@ -61,25 +87,111 @@ export default function HomePage() {
           <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
             <h3 className="text-xl font-semibold">1. Identify the problem</h3>
             <p className="text-gray-300 mt-3">
-              Find your issue — whether it's heating, plumbing, gardening or
-              general home maintenance.
+              Search for your issue — heating, plumbing, gardening or general
+              maintenance.
             </p>
           </div>
 
           <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
             <h3 className="text-xl font-semibold">2. Understand the cause</h3>
             <p className="text-gray-300 mt-3">
-              Learn what's actually happening inside your system instead of
-              guessing or wasting time.
+              Learn what is actually happening inside the system instead of
+              guessing.
             </p>
           </div>
 
           <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
-            <h3 className="text-xl font-semibold">3. Follow step-by-step fixes</h3>
+            <h3 className="text-xl font-semibold">
+              3. Follow step-by-step fixes
+            </h3>
             <p className="text-gray-300 mt-3">
-              Simple, practical instructions that guide you from problem →
-              solution without confusion.
+              Simple instructions that guide you from problem to solution.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TOPIC CLUSTERS PREVIEW */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <h2 className="text-3xl font-bold mb-8">Topic clusters</h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
+            <h3 className="text-xl font-semibold">Heating problems</h3>
+            <p className="text-gray-300 mt-3">
+              Radiators, boilers, pressure issues and circulation faults.
+            </p>
+            <Link
+              href="/categories/home-problems"
+              className="inline-block mt-4 text-indigo-400 hover:text-indigo-300"
+            >
+              Explore heating guides →
+            </Link>
+          </div>
+
+          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
+            <h3 className="text-xl font-semibold">Water & plumbing</h3>
+            <p className="text-gray-300 mt-3">
+              Low pressure, leaks, flow issues and system diagnostics.
+            </p>
+            <Link
+              href="/categories/home-problems"
+              className="inline-block mt-4 text-indigo-400 hover:text-indigo-300"
+            >
+              Explore plumbing guides →
+            </Link>
+          </div>
+
+          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
+            <h3 className="text-xl font-semibold">Garden care</h3>
+            <p className="text-gray-300 mt-3">
+              Plant problems, soil issues and seasonal maintenance.
+            </p>
+            <Link
+              href="/categories/garden-problems"
+              className="inline-block mt-4 text-indigo-400 hover:text-indigo-300"
+            >
+              Explore garden guides →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ MINI SECTION */}
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold">Quick FAQ</h2>
+
+          <div className="mt-6 space-y-6">
+            <div>
+              <h3 className="font-semibold text-white">
+                Can I fix these problems without tools?
+              </h3>
+              <p className="text-gray-300 mt-2">
+                Many issues like bleeding radiators or adjusting valves require
+                only basic household tools.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-white">
+                Do I need technical knowledge?
+              </h3>
+              <p className="text-gray-300 mt-2">
+                No. All guides are written for beginners with step-by-step
+                explanations.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-white">
+                What if the problem is serious?
+              </h3>
+              <p className="text-gray-300 mt-2">
+                Each guide includes a clear point where you should contact a
+                professional.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -95,8 +207,7 @@ export default function HomePage() {
           >
             <h3 className="text-xl font-semibold">Home Problems</h3>
             <p className="text-gray-300 mt-3">
-              Practical troubleshooting guides for heating, plumbing, electrical
-              and general home issues.
+              Heating, plumbing, electrical and general home troubleshooting.
             </p>
           </Link>
 
@@ -106,8 +217,7 @@ export default function HomePage() {
           >
             <h3 className="text-xl font-semibold">Garden Problems</h3>
             <p className="text-gray-300 mt-3">
-              Learn how to maintain plants, fix garden problems and improve
-              outdoor spaces efficiently.
+              Plant care, soil issues and outdoor maintenance guides.
             </p>
           </Link>
 
@@ -117,8 +227,7 @@ export default function HomePage() {
           >
             <h3 className="text-xl font-semibold">Home Calculators</h3>
             <p className="text-gray-300 mt-3">
-              Calculate materials, costs and measurements for home improvement
-              and DIY projects.
+              Material, cost and measurement tools for DIY projects.
             </p>
           </Link>
         </div>
@@ -127,13 +236,10 @@ export default function HomePage() {
       {/* FEATURED SECTION */}
       <section className="max-w-6xl mx-auto px-4 pb-16">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold">
-            Most Searched Home Problems
-          </h2>
+          <h2 className="text-2xl font-bold">Most searched problems</h2>
 
           <p className="text-gray-400 mt-2">
-            Real problems people search for every day — quick access to the most
-            useful guides.
+            Real issues people search for every day.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 mt-6">
@@ -141,7 +247,7 @@ export default function HomePage() {
               href="/home-problems/radiator-not-heating"
               className="bg-[#0f172a] border border-white/10 rounded-lg p-4 hover:bg-[#1f2937] transition"
             >
-              Why is my radiator not heating?
+              Radiator not heating
             </Link>
 
             <Link
@@ -164,24 +270,21 @@ export default function HomePage() {
       {/* TRUST SECTION */}
       <section className="max-w-6xl mx-auto px-4 pb-24">
         <div className="bg-[#111827] border border-white/10 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold">Why Home Help Hub Exists</h2>
+          <h2 className="text-2xl font-bold">Why Home Help Hub exists</h2>
 
           <p className="mt-4 text-gray-300 leading-8">
-            Most homeowners face the same problem: unclear advice, overly
-            technical explanations, or solutions that assume professional
-            knowledge.
+            The internet is full of incomplete or overly technical advice that
+            assumes prior knowledge.
           </p>
 
           <p className="mt-4 text-gray-300 leading-8">
-            Home Help Hub was created to change that — by turning complex home
-            maintenance topics into simple, structured and actionable guides
-            anyone can follow.
+            This site exists to simplify home maintenance into structured,
+            understandable steps anyone can follow.
           </p>
 
           <p className="mt-4 text-gray-300 leading-8">
-            Whether you are dealing with heating issues, water pressure
-            problems, or garden maintenance, every guide is designed to help you
-            understand the cause first — and then fix it step by step.
+            Every guide focuses on understanding the cause first, then applying
+            a practical fix.
           </p>
         </div>
       </section>

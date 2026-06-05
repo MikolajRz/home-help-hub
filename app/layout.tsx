@@ -11,22 +11,80 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist({
+const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://home-help-hub-smoky.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://home-help-hub-smoky.vercel.app"
-  ),
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "Home Help Hub",
     template: "%s | Home Help Hub",
   },
 
   description:
-    "Solutions for home problems, gardening issues and useful home calculators.",
+    "Step-by-step home repair guides, gardening solutions, and practical calculators for homeowners.",
+
+  applicationName: "Home Help Hub",
+  authors: [{ name: "Home Help Hub Team" }],
+  creator: "Home Help Hub",
+
+  keywords: [
+    "home repairs",
+    "DIY fixes",
+    "plumbing guide",
+    "heating problems",
+    "gardening tips",
+    "home maintenance",
+    "boiler not working",
+    "radiator not heating",
+  ],
+
+  openGraph: {
+    type: "website",
+    siteName: "Home Help Hub",
+    title: "Home Help Hub",
+    description:
+      "Step-by-step home repair guides, gardening solutions, and practical calculators.",
+    url: siteUrl,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Home Help Hub - DIY Home Repair Guides",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Home Help Hub",
+    description:
+      "Step-by-step home repair guides, gardening solutions, and practical calculators.",
+    images: ["/og-image.jpg"],
+  },
+
+  alternates: {
+    canonical: siteUrl,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -39,9 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <meta name="theme-color" content="#0b0f19" />
       <body className="min-h-screen flex flex-col bg-[#0b0f19] text-gray-100">
-        
         {/* BACKGROUND GLOW EFFECT */}
         <div className="fixed inset-0 -z-10">
           <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full" />
