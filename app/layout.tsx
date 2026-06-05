@@ -17,8 +17,9 @@ const geistMono = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
-
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://home-help-hub-smoky.vercel.app"
+  ),
   title: {
     default: "Home Help Hub",
     template: "%s | Home Help Hub",
