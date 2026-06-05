@@ -2,12 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-    sitemap: "http://localhost:3000/sitemap.xml",
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: "https://home-help-hub-smoky.vercel.app/sitemap.xml",
   };
 }
