@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -39,9 +38,7 @@ export default async function ArticlePage({
 
   const related = getRelatedPosts(slug);
 
-  const headings = useMemo(() => {
-    return post.content.match(/^##\s.+/gm) || [];
-  }, [post.content]);
+  const headings = post.content.match(/^##\s.+/gm) || [];
 
   return (
     <div className="min-h-screen bg-gray-50">
