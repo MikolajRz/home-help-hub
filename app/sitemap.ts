@@ -6,10 +6,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const posts = getHomeProblemPosts();
 
-  const articleUrls = posts.map((post) => ({
-    url: `${baseUrl}/home-problems/${post.slug}`,
-    lastModified: new Date(),
-  }));
+  const articleUrls = posts
+    .filter((post) => post?.slug) // 🔥 WAŻNE zabezpieczenie
+    .map((post) => ({
+      url: `${baseUrl}/home-problems/${post.slug}`,
+      lastModified: new Date(),
+    }));
 
   return [
     {
