@@ -37,6 +37,9 @@ export default async function ArticlePage({
 
   const related = getRelatedPosts(slug);
 
+  // 🧭 TOC (auto headings)
+  const headings = post.content.match(/^##\s.+/gm) || [];
+
   return (
     <div>
       <Breadcrumbs
@@ -118,14 +121,37 @@ export default async function ArticlePage({
       />
 
       <article className="mx-auto max-w-3xl px-4 py-10">
-        <h1 className="text-3xl font-bold">{post.title}</h1>
+        {/* HEADER */}
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold leading-tight">
+            {post.title}
+          </h1>
 
-        <p className="text-gray-500 mt-2">{post.description}</p>
+          <p className="text-lg text-gray-600 mt-3">
+            {post.description}
+          </p>
+
+          <div className="mt-4 text-sm text-gray-400">
+            Updated: {new Date().toDateString()}
+          </div>
+        </header>
 
         <hr className="my-6" />
 
+        {/* 🧭 TABLE OF CONTENTS */}
+        {headings.length > 0 && (
+          <div className="bg-gray-50 border rounded p-4 mb-8">
+            <h2 className="font-semibold mb-2">Contents</h2>
+            <ul className="text-sm space-y-1">
+              {headings.map((h, i) => (
+                <li key={i}>{h.replace("##", "").trim()}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* CONTENT */}
-        <div className="prose max-w-none">
+        <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content}
           </ReactMarkdown>
