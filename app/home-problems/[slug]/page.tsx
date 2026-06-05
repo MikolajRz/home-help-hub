@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import Link from "next/link";
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import InternalLinks from "@/components/InternalLinks";
+import ReadingProgress from "@/components/ReadingProgress";
 
 const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
@@ -37,10 +39,15 @@ export default async function ArticlePage({
 
   const related = getRelatedPosts(slug);
 
-  const headings = post.content.match(/^##\s.+/gm) || [];
+  const headings = useMemo(() => {
+    return post.content.match(/^##\s.+/gm) || [];
+  }, [post.content]);
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* READING PROGRESS BAR */}
+      <ReadingProgress />
+
       <div className="max-w-6xl mx-auto px-4">
         <Breadcrumbs
           items={[
@@ -52,10 +59,8 @@ export default async function ArticlePage({
 
         {/* ARTICLE LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-          
           {/* MAIN CONTENT */}
-          <article className="lg:col-span-8 bg-white rounded-xl shadow-sm px-8 py-10">
-            
+          <article className="lg:col-span-8 bg-white rounded-2xl border px-8 py-10 shadow-sm">
             {/* HEADER */}
             <header className="mb-8">
               <h1 className="text-4xl font-bold leading-tight">
@@ -75,7 +80,22 @@ export default async function ArticlePage({
 
             {/* CONTENT */}
             <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h2: ({ children }) => {
+                    const id = String(children)
+                      .toLowerCase()
+                      .replace(/\s+/g, "-");
+
+                    return (
+                      <h2 id={id} className="scroll-mt-24">
+                        {children}
+                      </h2>
+                    );
+                  },
+                }}
+              >
                 {post.content}
               </ReactMarkdown>
             </div>
@@ -123,7 +143,7 @@ export default async function ArticlePage({
 
           {/* SIDEBAR (TOC) */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-6 bg-white rounded-xl shadow-sm p-5">
+            <div className="sticky top-6 bg-white rounded-xl border p-5 shadow-sm">
               <h2 className="font-semibold mb-3">Contents</h2>
 
               {headings.length > 0 ? (
@@ -131,8 +151,12 @@ export default async function ArticlePage({
                   {headings.map((h, i) => (
                     <li key={i}>
                       <a
-                        href="#"
-                        className="text-gray-700 hover:text-black transition"
+                        href={`#${h
+                          .replace("##", "")
+                          .trim()
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`}
+                        className="block text-gray-700 hover:text-black transition relative pl-2 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-black hover:before:h-full before:transition-all"
                       >
                         {h.replace("##", "").trim()}
                       </a>
@@ -146,7 +170,6 @@ export default async function ArticlePage({
               )}
             </div>
           </aside>
-
         </div>
       </div>
     </div>
