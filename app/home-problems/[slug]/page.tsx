@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
 
 import { getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -14,7 +14,6 @@ export async function generateMetadata({
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
-
   if (!post) return {};
 
   return {
@@ -31,10 +30,11 @@ export default async function ArticlePage({
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
-
   if (!post) return notFound();
 
   const related = getRelatedPosts(slug);
+
+  const baseUrl = "https://home-help-hub-smoky.vercel.app";
 
   return (
     <div>
@@ -46,6 +46,7 @@ export default async function ArticlePage({
         ]}
       />
 
+      {/* 🔥 SEO STRUCTURED DATA (FIXED) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -57,19 +58,19 @@ export default async function ArticlePage({
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "http://localhost:3000/",
+                item: `${baseUrl}/`,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Home Problems",
-                item: "http://localhost:3000/categories/home-problems",
+                item: `${baseUrl}/categories/home-problems`,
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: post.title,
-                item: `http://localhost:3000/home-problems/${post.slug}`,
+                item: `${baseUrl}/home-problems/${post.slug}`,
               },
             ],
           }),
@@ -83,27 +84,36 @@ export default async function ArticlePage({
 
         <hr className="my-6" />
 
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {post.content}
-        </ReactMarkdown>
+        {/* CONTENT */}
+        <div className="prose max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {post.content}
+          </ReactMarkdown>
+        </div>
 
-        {/* 🔗 RELATED ARTICLES */}
-        <section className="mt-12 border-t pt-6">
-          <h2 className="text-xl font-semibold">Related articles</h2>
+        {/* 🔗 RELATED ARTICLES (SEO BOOST) */}
+        {related.length > 0 && (
+          <section className="mt-12 border-t pt-6">
+            <h2 className="text-xl font-semibold mb-4">
+              Related home problems
+            </h2>
 
-          <div className="mt-4 grid gap-4">
-            {related.map((r) => (
-              <Link
-                key={r.slug}
-                href={`/home-problems/${r.slug}`}
-                className="border p-4 rounded hover:shadow transition"
-              >
-                <h3 className="font-semibold">{r.title}</h3>
-                <p className="text-sm text-gray-600">{r.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+            <div className="grid gap-4">
+              {related.map((r) => (
+                <Link
+                  key={r.slug}
+                  href={`/home-problems/${r.slug}`}
+                  className="border rounded p-4 hover:shadow transition"
+                >
+                  <h3 className="font-semibold">{r.title}</h3>
+                  <p className="text-sm text-gray-600">
+                    {r.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </article>
     </div>
   );
