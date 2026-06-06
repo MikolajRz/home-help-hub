@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Contact | Hometopia",
@@ -22,23 +23,34 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
-      {/* HERO */}
-      <section className="max-w-4xl mx-auto px-4 pt-2 pb-10">
-        <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
-          <span className="text-sm font-medium text-[#2d5a2c]">📬 Get in touch</span>
+      <div className="max-w-4xl mx-auto px-4 pt-2 pb-10">
+        
+        {/* BREADCRUMBS */}
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Contact", href: "/contact" },
+          ]}
+        />
+
+        {/* HERO */}
+        <div className="mt-4">
+          <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
+            <span className="text-sm font-medium text-[#2d5a2c]">📬 Get in touch</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#2c4a2e]">
+            Contact Hometopia
+          </h1>
+          <p className="mt-4 text-lg text-[#4a5b4a] max-w-2xl">
+            We're here to help you improve your home and garden knowledge. Whether you have
+            a question about a guide, want to suggest a topic, or report an issue — feel free to reach out.
+          </p>
+          <p className="mt-3 text-[#6b7c6b]">
+            This platform focuses on practical home repair knowledge, gardening
+            solutions, and everyday DIY troubleshooting guides.
+          </p>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#2c4a2e]">
-          Contact Hometopia
-        </h1>
-        <p className="mt-4 text-lg text-[#4a5b4a] max-w-2xl">
-          We're here to help you improve your home and garden knowledge. Whether you have
-          a question about a guide, want to suggest a topic, or report an issue — feel free to reach out.
-        </p>
-        <p className="mt-3 text-[#6b7c6b]">
-          This platform focuses on practical home repair knowledge, gardening
-          solutions, and everyday DIY troubleshooting guides.
-        </p>
-      </section>
+      </div>
 
       {/* TRUST / E-E-A-T */}
       <section className="max-w-4xl mx-auto px-4 pb-10">

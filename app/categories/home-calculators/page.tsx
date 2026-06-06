@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
   title: "Home Calculators - Free DIY Tools | Hometopia",
@@ -10,6 +11,16 @@ export default function HomeCalculatorsPage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0] py-2">
       <div className="max-w-6xl mx-auto px-4">
+        
+        {/* BREADCRUMBS */}
+        <div className="mb-6">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Calculators", href: "/categories/home-calculators" },
+            ]}
+          />
+        </div>
         
         {/* HEADER */}
         <div className="text-center mb-12">

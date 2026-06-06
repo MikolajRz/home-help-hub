@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "About Hometopia | Home & Garden Solutions",
@@ -14,6 +15,14 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
       <div className="max-w-4xl mx-auto px-4 py-2">
+
+        {/* BREADCRUMBS - DODAJ TO */}
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+          ]}
+        />
 
         {/* HERO */}
         <div className="mb-10">
