@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen relative text-gray-800">
+    <main className="min-h-screen relative bg-[#f8f6f0] text-gray-800">
       
       {/* TŁO CAŁEJ STRONY Z PRZEZROCZYSTOŚCIĄ 5% */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" 
