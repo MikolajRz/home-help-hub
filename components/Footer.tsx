@@ -69,7 +69,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-[#4a5b4a] hover:text-[#2d5a2c] transition">
+                <Link href="/terms-of-use" className="text-[#4a5b4a] hover:text-[#2d5a2c] transition">
                   Terms of Use
                 </Link>
               </li>
