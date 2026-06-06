@@ -90,7 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${BASE_URL}/terms`,
+      url: `${BASE_URL}/terms-of-use`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,

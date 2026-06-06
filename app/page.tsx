@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getHomeProblemPosts } from "@/lib/posts";
 
 export const metadata = {
   title: "Hometopia - Home & Garden Solutions, Repairs & DIY",
@@ -7,6 +8,12 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  // Pobierz najnowsze artykuły (3 ostatnie)
+  const allPosts = getHomeProblemPosts();
+  const latestPosts = allPosts.sort((a, b) => 
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  ).slice(0, 3);
+
   return (
     <main className="min-h-screen relative bg-[#f8f6f0] text-gray-800">
       
@@ -114,6 +121,50 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* LATEST GUIDES - NOWA SEKCJA */}
+        <section className="max-w-7xl mx-auto px-4 pb-12">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-3xl font-bold text-[#2c4a2e]">Latest Guides</h2>
+            <Link 
+              href="/categories/home-problems" 
+              className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium text-sm flex items-center gap-1"
+            >
+              View all guides
+              <span className="text-lg">→</span>
+            </Link>
+          </div>
+
+          {latestPosts.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/home-problems/${post.slug}`}
+                  className="group bg-white rounded-xl border border-[#dce4d8] p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="text-sm text-[#c4a86b] font-medium mb-2">
+                    {new Date(post.date).toDateString()}
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#2c4a2e] group-hover:text-[#2d5a2c] transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-[#4a5b4a] mt-2 leading-relaxed line-clamp-3">
+                    {post.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-1 text-[#2d5a2c] font-medium text-sm">
+                    <span>Read guide</span>
+                    <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-xl border border-[#dce4d8] p-8 text-center">
+              <p className="text-[#4a5b4a]">No guides available yet. Check back soon!</p>
+            </div>
+          )}
         </section>
 
         {/* TOPIC CLUSTERS PREVIEW */}
@@ -264,7 +315,7 @@ export default function HomePage() {
           </div>
         </section>
 
-                {/* TRUST SECTION - Why Hometopia exists */}
+        {/* TRUST SECTION - Why Hometopia exists */}
         <section className="max-w-7xl mx-auto px-4 pb-16">
           <div className="bg-gradient-to-br from-white to-[#f0ede5] rounded-2xl p-8 border border-[#dce4d8] shadow-sm">
             <div className="text-center max-w-3xl mx-auto">
