@@ -8,12 +8,17 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#f8f6f0] to-[#e8e3d8] text-gray-800">
+    <main 
+      className="min-h-screen text-gray-800"
+      style={{ 
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23365c42' stroke-width='1'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E\")",
+        backgroundRepeat: "repeat",
+        backgroundSize: "30px",
+        backgroundColor: "#f8f6f0"
+      }}
+    >
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none" 
-             style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23365c42' stroke-width='1'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat", backgroundSize: "30px" }}></div>
-
         <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 relative">
           <span className="inline-block bg-[#2d5a2c] text-white rounded-full px-4 py-1.5 text-sm font-medium">
             🌿 DIY Knowledge Base • Home Repairs • Gardening • Calculators
@@ -56,7 +61,7 @@ export default function HomePage() {
 
       {/* WHAT THIS SITE IS */}
       <section className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-[#dce4d8]">
+        <div className="bg-white rounded-2xl p-8 shadow-sm border border-[#dce4d8]">
           <h2 className="text-2xl font-bold text-[#2c4a2e]">What Hometopia Is</h2>
 
           <p className="mt-4 text-[#4a5b4a] leading-relaxed">
@@ -155,7 +160,7 @@ export default function HomePage() {
 
       {/* FAQ MINI SECTION */}
       <section className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-[#dce4d8]">
+        <div className="bg-white rounded-2xl p-8 border border-[#dce4d8] shadow-sm">
           <h2 className="text-2xl font-bold text-[#2c4a2e]">Quick FAQ</h2>
 
           <div className="mt-6 space-y-6">
@@ -223,7 +228,7 @@ export default function HomePage() {
 
       {/* FEATURED SECTION - Most searched problems */}
       <section className="max-w-7xl mx-auto px-4 pb-12">
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-[#dce4d8]">
+        <div className="bg-white rounded-2xl p-8 border border-[#dce4d8] shadow-sm">
           <h2 className="text-2xl font-bold text-[#2c4a2e]">Most searched problems</h2>
 
           <p className="text-[#6b7c6b] mt-2">
@@ -257,7 +262,7 @@ export default function HomePage() {
 
       {/* TRUST SECTION */}
       <section className="max-w-7xl mx-auto px-4 pb-16">
-        <div className="bg-white/50 rounded-2xl p-8 border border-[#dce4d8] text-center">
+        <div className="bg-white rounded-2xl p-8 border border-[#dce4d8] shadow-sm text-center">
           <h2 className="text-2xl font-bold text-[#2c4a2e]">Why Hometopia exists</h2>
 
           <p className="mt-4 text-[#4a5b4a] leading-relaxed">
