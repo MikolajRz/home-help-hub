@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function HomeCalculatorsPage() {
   return (
-    <main className="min-h-screen bg-[#f8f6f0] py-2">
+    <main className="min-h-screen bg-[#f8f6f0] py-12">
       <div className="max-w-6xl mx-auto px-4">
         
         {/* HEADER */}
@@ -30,7 +30,7 @@ export default function HomeCalculatorsPage() {
           
           {/* PAINT CALCULATOR CARD */}
           <Link 
-            href="/categories/home-calculators/paint-calculator"
+            href="/calculators/paint"
             className="group bg-white rounded-2xl border border-[#dce4d8] p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex items-start justify-between">
@@ -54,7 +54,7 @@ export default function HomeCalculatorsPage() {
           
           {/* FLOORING CALCULATOR CARD */}
           <Link 
-            href="/categories/home-calculators/flooring-calculator"
+            href="/calculators/floor"
             className="group bg-white rounded-2xl border border-[#dce4d8] p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex items-start justify-between">
