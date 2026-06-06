@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen text-gray-800 opacity-5"
-          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23365c42' stroke-width='1'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat", backgroundSize: "30px" }}>
+    <main className="min-h-screen text-gray-800"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23365c42' stroke-width='1'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat", backgroundSize: "30px", opacity: 0.05 }}>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none" 
