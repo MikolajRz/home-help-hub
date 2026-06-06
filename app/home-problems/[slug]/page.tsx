@@ -121,7 +121,7 @@ export default async function ArticlePage({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f8f6f0] to-[#e8e3d8] text-gray-800">
+    <div className="min-h-screen bg-[#f8f6f0] text-gray-800">
       <ReadingProgress />
       <BackToTop />
 
