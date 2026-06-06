@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  background: #f8f6f0 0%;
+  background: #f8f6f0;
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
