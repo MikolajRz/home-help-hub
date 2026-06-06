@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact | Home Help Hub",
+  title: "Contact | Hometopia",
   description:
-    "Get in touch with Home Help Hub. Report issues, suggest topics, or ask questions about home repairs, gardening, and DIY guides.",
+    "Get in touch with Hometopia. Report issues, suggest topics, or ask questions about home repairs, gardening, and DIY guides.",
   openGraph: {
-    title: "Contact | Home Help Hub",
+    title: "Contact | Hometopia",
     description:
-      "Contact the Home Help Hub team for questions, feedback, or collaboration.",
-    url: "https://home-help-hub-smoky.vercel.app/contact",
-    siteName: "Home Help Hub",
+      "Contact the Hometopia team for questions, feedback, or collaboration.",
+    url: "https://hometopia.com/contact",
+    siteName: "Hometopia",
     type: "website",
   },
   robots: {
@@ -20,20 +21,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#0b0f19] text-gray-100">
+    <main className="min-h-screen bg-[#f8f6f0]">
       {/* HERO */}
       <section className="max-w-4xl mx-auto px-4 pt-16 pb-10">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Contact Home Help Hub
+        <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
+          <span className="text-sm font-medium text-[#2d5a2c]">📬 Get in touch</span>
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold text-[#2c4a2e]">
+          Contact Hometopia
         </h1>
-
-        <p className="mt-4 text-lg text-gray-300">
-          We’re here to help you improve your home knowledge. Whether you have
-          a question about a guide, want to suggest a topic, or report an
-          issue — feel free to reach out.
+        <p className="mt-4 text-lg text-[#4a5b4a] max-w-2xl">
+          We're here to help you improve your home and garden knowledge. Whether you have
+          a question about a guide, want to suggest a topic, or report an issue — feel free to reach out.
         </p>
-
-        <p className="mt-3 text-gray-400">
+        <p className="mt-3 text-[#6b7c6b]">
           This platform focuses on practical home repair knowledge, gardening
           solutions, and everyday DIY troubleshooting guides.
         </p>
@@ -41,18 +42,16 @@ export default function ContactPage() {
 
       {/* TRUST / E-E-A-T */}
       <section className="max-w-4xl mx-auto px-4 pb-10">
-        <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
-          <h2 className="text-2xl font-semibold">
+        <div className="bg-white border border-[#dce4d8] rounded-2xl p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold text-[#2c4a2e]">
             Why you can contact us
           </h2>
-
-          <p className="mt-4 text-gray-300 leading-7">
-            Home Help Hub is built as a structured knowledge base for homeowners.
+          <p className="mt-4 text-[#4a5b4a] leading-7">
+            Hometopia is built as a structured knowledge base for homeowners.
             We continuously improve our guides based on user feedback, common
             real-world problems, and practical home maintenance cases.
           </p>
-
-          <ul className="mt-4 list-disc list-inside text-gray-300 space-y-2">
+          <ul className="mt-4 list-disc list-inside text-[#4a5b4a] space-y-2">
             <li>Report unclear or outdated information</li>
             <li>Suggest new home repair topics</li>
             <li>Request step-by-step guides</li>
@@ -63,33 +62,31 @@ export default function ContactPage() {
 
       {/* CONTACT OPTIONS */}
       <section className="max-w-4xl mx-auto px-4 pb-10">
-        <h2 className="text-2xl font-semibold mb-6">Get in touch</h2>
-
+        <h2 className="text-2xl font-semibold text-[#2c4a2e] mb-6">Get in touch</h2>
         <div className="grid gap-4">
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
-            <h3 className="font-semibold text-lg">Email</h3>
-            <p className="text-gray-300 mt-2">
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold text-lg text-[#2c4a2e]">📧 Email</h3>
+            <p className="text-[#4a5b4a] mt-2">
               For general inquiries and feedback:
             </p>
-            <p className="mt-2 text-indigo-400">
-              support@homehelphub.com
+            <p className="mt-2 text-[#2d5a2c] font-medium">
+              hello@hometopia.com
             </p>
           </div>
 
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
-            <h3 className="font-semibold text-lg">Content suggestions</h3>
-            <p className="text-gray-300 mt-2">
-              If you want a guide written for a specific problem:
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold text-lg text-[#2c4a2e]">💡 Content suggestions</h3>
+            <p className="text-[#4a5b4a] mt-2">
+              If you want a guide written for a specific problem, describe your issue clearly.
             </p>
-            <p className="mt-2 text-gray-400">
-              Describe your issue clearly (e.g. “radiator not heating top but
-              bottom warm”).
+            <p className="mt-2 text-[#6b7c6b] text-sm">
+              Example: "radiator not heating top but bottom warm"
             </p>
           </div>
 
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
-            <h3 className="font-semibold text-lg">Collaboration</h3>
-            <p className="text-gray-300 mt-2">
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-6 shadow-sm">
+            <h3 className="font-semibold text-lg text-[#2c4a2e]">🤝 Collaboration</h3>
+            <p className="text-[#4a5b4a] mt-2">
               We are open to partnerships related to home improvement content,
               DIY tools, and educational resources.
             </p>
@@ -99,34 +96,32 @@ export default function ContactPage() {
 
       {/* FAQ STYLE TRUST BOOST */}
       <section className="max-w-4xl mx-auto px-4 pb-16">
-        <h2 className="text-2xl font-semibold mb-6">FAQ</h2>
-
+        <h2 className="text-2xl font-semibold text-[#2c4a2e] mb-6">FAQ</h2>
         <div className="space-y-4">
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-5">
-            <h3 className="font-semibold">
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-5 shadow-sm">
+            <h3 className="font-semibold text-[#2c4a2e]">
               How fast do you respond?
             </h3>
-            <p className="text-gray-300 mt-2">
+            <p className="text-[#4a5b4a] mt-2">
               Usually within a few days, depending on request volume.
             </p>
           </div>
 
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-5">
-            <h3 className="font-semibold">
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-5 shadow-sm">
+            <h3 className="font-semibold text-[#2c4a2e]">
               Can I request a new article?
             </h3>
-            <p className="text-gray-300 mt-2">
-              Yes — we prioritize practical, real-world home issues.
+            <p className="text-[#4a5b4a] mt-2">
+              Yes — we prioritize practical, real-world home and garden issues.
             </p>
           </div>
 
-          <div className="bg-[#111827] border border-white/10 rounded-xl p-5">
-            <h3 className="font-semibold">
+          <div className="bg-white border border-[#dce4d8] rounded-2xl p-5 shadow-sm">
+            <h3 className="font-semibold text-[#2c4a2e]">
               Is this site professional advice?
             </h3>
-            <p className="text-gray-300 mt-2">
-              It provides informational guides, not licensed professional
-              services.
+            <p className="text-[#4a5b4a] mt-2">
+              It provides informational guides, not licensed professional services.
             </p>
           </div>
         </div>
@@ -134,30 +129,26 @@ export default function ContactPage() {
 
       {/* CTA */}
       <section className="max-w-4xl mx-auto px-4 pb-20">
-        <div className="bg-indigo-600/10 border border-indigo-500/20 rounded-xl p-6 text-center">
-          <h2 className="text-2xl font-semibold">
+        <div className="bg-[#2d5a2c]/5 border border-[#2d5a2c]/20 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-semibold text-[#2c4a2e]">
             Still need help?
           </h2>
-
-          <p className="text-gray-300 mt-3">
-            Browse our most popular troubleshooting guides or start with home
-            problem categories.
+          <p className="text-[#4a5b4a] mt-3">
+            Browse our most popular troubleshooting guides or start with home problem categories.
           </p>
-
           <div className="mt-6 flex gap-4 justify-center flex-wrap">
-            <a
+            <Link
               href="/categories/home-problems"
-              className="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-lg transition"
+              className="bg-[#2d5a2c] hover:bg-[#1f3d1e] text-white px-6 py-3 rounded-full transition shadow-sm"
             >
               Browse Guides
-            </a>
-
-            <a
+            </Link>
+            <Link
               href="/"
-              className="border border-white/10 px-5 py-3 rounded-lg hover:bg-[#111827] transition"
+              className="border-2 border-[#2d5a2c] text-[#2d5a2c] hover:bg-[#2d5a2c] hover:text-white px-6 py-3 rounded-full transition"
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </section>

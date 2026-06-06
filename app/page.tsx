@@ -264,7 +264,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* TRUST SECTION */}
+        {/* TRUST SECTION Z LINKAMI DO ABOUT, CONTACT I PRIVACY POLICY */}
         <section className="max-w-7xl mx-auto px-4 pb-16">
           <div className="bg-white rounded-2xl p-8 border border-[#dce4d8] shadow-sm text-center">
             <h2 className="text-2xl font-bold text-[#2c4a2e]">Why Hometopia exists</h2>
@@ -280,8 +280,36 @@ export default function HomePage() {
             <p className="mt-4 text-[#4a5b4a] leading-relaxed">
               Every guide focuses on understanding the cause first, then applying a practical fix.
             </p>
+
+            {/* LINKI DO STRON INFORMACYJNYCH */}
+            <div className="mt-8 pt-6 border-t border-[#dce4d8] flex flex-wrap justify-center gap-6">
+              <Link 
+                href="/about" 
+                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
+              >
+                About Hometopia
+                <span className="text-lg">→</span>
+              </Link>
+              
+              <Link 
+                href="/contact" 
+                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
+              >
+                Contact
+                <span className="text-lg">→</span>
+              </Link>
+              
+              <Link 
+                href="/privacy-policy" 
+                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
+              >
+                Privacy Policy
+                <span className="text-lg">→</span>
+              </Link>
+            </div>
           </div>
         </section>
+
       </div>
     </main>
   );
