@@ -264,52 +264,47 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* TRUST SECTION Z LINKAMI DO ABOUT, CONTACT I PRIVACY POLICY */}
+                {/* TRUST SECTION - Why Hometopia exists */}
         <section className="max-w-7xl mx-auto px-4 pb-16">
-          <div className="bg-white rounded-2xl p-8 border border-[#dce4d8] shadow-sm text-center">
-            <h2 className="text-2xl font-bold text-[#2c4a2e]">Why Hometopia exists</h2>
-
-            <p className="mt-4 text-[#4a5b4a] leading-relaxed">
-              The internet is full of incomplete or overly technical advice that assumes prior knowledge.
-            </p>
-
-            <p className="mt-4 text-[#4a5b4a] leading-relaxed">
-              This site exists to simplify home maintenance into structured, understandable steps anyone can follow.
-            </p>
-
-            <p className="mt-4 text-[#4a5b4a] leading-relaxed">
-              Every guide focuses on understanding the cause first, then applying a practical fix.
-            </p>
-
-            {/* LINKI DO STRON INFORMACYJNYCH */}
-            <div className="mt-8 pt-6 border-t border-[#dce4d8] flex flex-wrap justify-center gap-6">
-              <Link 
-                href="/about" 
-                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
-              >
-                About Hometopia
-                <span className="text-lg">→</span>
-              </Link>
+          <div className="bg-gradient-to-br from-white to-[#f0ede5] rounded-2xl p-8 border border-[#dce4d8] shadow-sm">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
+                <span className="text-sm font-medium text-[#2d5a2c]">🌱 Our Mission</span>
+              </div>
               
-              <Link 
-                href="/contact" 
-                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
-              >
-                Contact
-                <span className="text-lg">→</span>
-              </Link>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2c4a2e] mb-6">
+                Why Hometopia Exists
+              </h2>
               
-              <Link 
-                href="/privacy-policy" 
-                className="text-[#2d5a2c] hover:text-[#1f3d1e] font-medium transition-colors inline-flex items-center gap-1"
-              >
-                Privacy Policy
-                <span className="text-lg">→</span>
-              </Link>
+              <div className="space-y-4 text-[#4a5b4a] leading-relaxed">
+                <p>
+                  The internet is full of incomplete or overly technical advice that assumes 
+                  prior knowledge. Homeowners often feel frustrated trying to find clear, 
+                  practical solutions to everyday problems.
+                </p>
+
+                <p>
+                  <strong className="text-[#2d5a2c]">Hometopia was built to change that.</strong> 
+                  We turn complex home maintenance into structured, understandable steps that 
+                  anyone can follow — regardless of experience level.
+                </p>
+
+                <p>
+                  Every guide focuses on <strong className="text-[#2d5a2c]">understanding the cause first</strong>, 
+                  then applying a practical fix. No guesswork. No unnecessary complexity. 
+                  Just real solutions for real homes and gardens.
+                </p>
+              </div>
+              
+              {/* Dekoracyjny separator */}
+              <div className="mt-8 flex justify-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#c4a86b]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#2d5a2c]"></div>
+                <div className="w-2 h-2 rounded-full bg-[#c4a86b]"></div>
+              </div>
             </div>
           </div>
         </section>
-
       </div>
     </main>
   );

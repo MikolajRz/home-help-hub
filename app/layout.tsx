@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
@@ -20,6 +20,16 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://home-help-hub-smoky.vercel.app";
 
+// Viewport configuration (dla mobile)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#2d5a2c", // zielony kolor marki dla paska przeglądarki na mobile
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
@@ -32,8 +42,9 @@ export const metadata: Metadata = {
     "Practical home and garden guides, DIY repairs, plant care, and smart solutions for your everyday household challenges.",
 
   applicationName: "Hometopia",
-  authors: [{ name: "Hometopia Team" }],
-  creator: "Hometopia",
+  authors: [{ name: "Hometopia Team", url: siteUrl }],
+  creator: "Hometopia Team",
+  publisher: "Hometopia",
 
   keywords: [
     "home repairs",
@@ -47,6 +58,21 @@ export const metadata: Metadata = {
     "radiator not heating",
   ],
 
+  // Manifest dla PWA (opcjonalnie)
+  manifest: "/site.webmanifest",
+
+  // Ikony dla różnych urządzeń
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon-180.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+
   openGraph: {
     type: "website",
     siteName: "Hometopia",
@@ -54,6 +80,7 @@ export const metadata: Metadata = {
     description:
       "Practical home and garden guides, DIY repairs, plant care, and smart solutions.",
     url: siteUrl,
+    locale: "en_US",
     images: [
       {
         url: "/og-image.jpg",
@@ -70,10 +97,15 @@ export const metadata: Metadata = {
     description:
       "Practical home and garden guides, DIY repairs, plant care, and smart solutions.",
     images: ["/og-image.jpg"],
+    creator: "@hometopia",
+    site: "@hometopia",
   },
 
   alternates: {
     canonical: siteUrl,
+    languages: {
+      "en-US": siteUrl,
+    },
   },
 
   robots: {
@@ -84,7 +116,30 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
+  },
+
+  // Dodatkowe meta tagi
+  category: "home improvement",
+  classification: "DIY, Home Improvement, Gardening",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+
+  // Apple-specific
+  appleWebApp: {
+    capable: true,
+    title: "Hometopia",
+    statusBarStyle: "black-translucent",
+  },
+
+  // Verification dla Google Search Console (opcjonalnie)
+  verification: {
+    google: "your-google-verification-code", // zastąp swoim kodem
   },
 };
 
