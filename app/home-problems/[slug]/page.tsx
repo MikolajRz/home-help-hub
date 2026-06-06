@@ -278,11 +278,34 @@ export default async function ArticlePage({
                 </div>
               </section>
             )}
+
+            {/* FAQ - przeniesione tutaj, pod Related guides */}
+            <div className="mt-6">
+              <FAQ
+                items={[
+                  {
+                    question: "Why is my radiator cold at the top?",
+                    answer:
+                      "This is usually caused by trapped air inside the radiator.",
+                  },
+                  {
+                    question: "How long does it take to fix it?",
+                    answer:
+                      "Most issues can be resolved within 10–20 minutes.",
+                  },
+                  {
+                    question: "Do I need a professional?",
+                    answer:
+                      "Usually not — unless the problem persists after bleeding and pressure check.",
+                  },
+                ]}
+              />
+            </div>
           </article>
 
-          {/* SIDEBAR */}
+          {/* SIDEBAR - tylko Contents */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-6 space-y-6">
+            <div className="sticky top-6">
               <div className="bg-white border border-[#dce4d8] rounded-2xl p-5 shadow-sm">
                 <h2 className="font-semibold text-[#2c4a2e] mb-3">Contents</h2>
 
@@ -313,27 +336,6 @@ export default async function ArticlePage({
                   </p>
                 )}
               </div>
-
-              {/* FAQ */}
-              <FAQ
-                items={[
-                  {
-                    question: "Why is my radiator cold at the top?",
-                    answer:
-                      "This is usually caused by trapped air inside the radiator.",
-                  },
-                  {
-                    question: "How long does it take to fix it?",
-                    answer:
-                      "Most issues can be resolved within 10–20 minutes.",
-                  },
-                  {
-                    question: "Do I need a professional?",
-                    answer:
-                      "Usually not — unless the problem persists after bleeding and pressure check.",
-                  },
-                ]}
-              />
             </div>
           </aside>
         </div>
