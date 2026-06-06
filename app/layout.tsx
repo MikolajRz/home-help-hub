@@ -24,16 +24,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Home Help Hub",
-    template: "%s | Home Help Hub",
+    default: "Hometopia",
+    template: "%s | Hometopia",
   },
 
   description:
-    "Step-by-step home repair guides, gardening solutions, and practical calculators for homeowners.",
+    "Practical home and garden guides, DIY repairs, plant care, and smart solutions for your everyday household challenges.",
 
-  applicationName: "Home Help Hub",
-  authors: [{ name: "Home Help Hub Team" }],
-  creator: "Home Help Hub",
+  applicationName: "Hometopia",
+  authors: [{ name: "Hometopia Team" }],
+  creator: "Hometopia",
 
   keywords: [
     "home repairs",
@@ -42,32 +42,33 @@ export const metadata: Metadata = {
     "heating problems",
     "gardening tips",
     "home maintenance",
+    "plant care",
     "boiler not working",
     "radiator not heating",
   ],
 
   openGraph: {
     type: "website",
-    siteName: "Home Help Hub",
-    title: "Home Help Hub",
+    siteName: "Hometopia",
+    title: "Hometopia",
     description:
-      "Step-by-step home repair guides, gardening solutions, and practical calculators.",
+      "Practical home and garden guides, DIY repairs, plant care, and smart solutions.",
     url: siteUrl,
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Home Help Hub - DIY Home Repair Guides",
+        alt: "Hometopia - Home & Garden Solutions",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Home Help Hub",
+    title: "Hometopia",
     description:
-      "Step-by-step home repair guides, gardening solutions, and practical calculators.",
+      "Practical home and garden guides, DIY repairs, plant care, and smart solutions.",
     images: ["/og-image.jpg"],
   },
 
@@ -97,21 +98,15 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-[#0b0f19] text-gray-100">
-        {/* BACKGROUND GLOW EFFECT */}
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
-        </div>
-
+      <body className="min-h-screen flex flex-col bg-[#f8f6f0] text-gray-800">
         {/* HEADER */}
-        <div className="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-white/10">
+        <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#dce4d8]">
           <Header />
         </div>
 
         {/* MAIN CONTENT */}
         <main className="flex-1 w-full">
-          <div className="mx-auto max-w-6xl px-4 py-6">
+          <div className="mx-auto max-w-7xl px-4 py-6">
             {children}
           </div>
         </main>
