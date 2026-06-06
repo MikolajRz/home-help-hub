@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
       {/* HERO */}
-      <section className="max-w-4xl mx-auto px-4 pt-16 pb-10">
+      <section className="max-w-4xl mx-auto px-4 pt-6 pb-10">
         <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
           <span className="text-sm font-medium text-[#2d5a2c]">📬 Get in touch</span>
         </div>
