@@ -37,7 +37,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       url: `${baseUrl}/home-problems/${slug}`,
-      siteName: "Home Help Hub",
+      siteName: "Hometopia",
       type: "article",
     },
     twitter: {
@@ -74,12 +74,12 @@ export default async function ArticlePage({
     dateModified: post.date,
     author: {
       "@type": "Organization",
-      name: "Home Help Hub",
+      name: "Hometopia",
       url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
-      name: "Home Help Hub",
+      name: "Hometopia",
       url: baseUrl,
     },
     mainEntityOfPage: articleUrl,
@@ -121,7 +121,7 @@ export default async function ArticlePage({
   };
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#f8f6f0] to-[#e8e3d8] text-gray-800">
       <ReadingProgress />
       <BackToTop />
 
@@ -150,18 +150,18 @@ export default async function ArticlePage({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           {/* MAIN CONTENT */}
-          <article className="lg:col-span-8 bg-[#111827] border border-white/10 rounded-2xl px-8 py-6 shadow-xl">
+          <article className="lg:col-span-8 bg-white rounded-2xl border border-[#dce4d8] px-8 py-6 shadow-sm">
             {/* HEADER */}
             <header className="mb-8">
-              <h1 className="text-4xl font-bold leading-tight">
+              <h1 className="text-4xl font-bold leading-tight text-[#2c4a2e]">
                 {post.title}
               </h1>
 
-              <p className="text-lg text-gray-300 mt-3">
+              <p className="text-lg text-[#4a5b4a] mt-3">
                 {post.description}
               </p>
 
-              <div className="flex gap-4 text-sm text-gray-400 mt-4">
+              <div className="flex gap-4 text-sm text-[#6b7c6b] mt-4">
                 <span>
                   <ReadingTime content={post.content} />
                 </span>
@@ -173,35 +173,35 @@ export default async function ArticlePage({
 
             {/* GUIDE META */}
             <section className="grid md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-[#0f172a] border border-white/10 p-4 rounded-lg">
-                <h3 className="font-semibold">Time required</h3>
-                <p className="text-gray-400 mt-1">10–20 minutes</p>
+              <div className="bg-[#f0ede5] border border-[#dce4d8] p-4 rounded-xl">
+                <h3 className="font-semibold text-[#2c4a2e]">Time required</h3>
+                <p className="text-[#4a5b4a] mt-1">10–20 minutes</p>
               </div>
 
-              <div className="bg-[#0f172a] border border-white/10 p-4 rounded-lg">
-                <h3 className="font-semibold">Cost estimate</h3>
-                <p className="text-gray-400 mt-1">£0–£10</p>
+              <div className="bg-[#f0ede5] border border-[#dce4d8] p-4 rounded-xl">
+                <h3 className="font-semibold text-[#2c4a2e]">Cost estimate</h3>
+                <p className="text-[#4a5b4a] mt-1">£0–£10</p>
               </div>
 
-              <div className="bg-[#0f172a] border border-white/10 p-4 rounded-lg">
-                <h3 className="font-semibold">Difficulty</h3>
-                <p className="text-gray-400 mt-1">Beginner</p>
+              <div className="bg-[#f0ede5] border border-[#dce4d8] p-4 rounded-xl">
+                <h3 className="font-semibold text-[#2c4a2e]">Difficulty</h3>
+                <p className="text-[#4a5b4a] mt-1">Beginner</p>
               </div>
             </section>
 
-            <hr className="border-white/10 mb-6" />
+            <hr className="border-[#dce4d8] mb-6" />
 
             {/* CONTENT */}
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:scroll-mt-24">
+            <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.content}
               </ReactMarkdown>
             </div>
 
             {/* WHAT NOT TO DO */}
-            <section className="mt-6 border-t border-white/10 pt-6">
-              <h2 className="text-xl font-semibold">What NOT to do</h2>
-              <ul className="mt-3 list-disc ml-6 text-gray-300 space-y-2">
+            <section className="mt-6 border-t border-[#dce4d8] pt-6">
+              <h2 className="text-xl font-semibold text-[#2c4a2e]">What NOT to do</h2>
+              <ul className="mt-3 list-disc ml-6 text-[#4a5b4a] space-y-2">
                 <li>Do not force valves that are stuck</li>
                 <li>Do not bleed radiators while heating is on</li>
                 <li>Do not ignore repeated pressure drops</li>
@@ -209,9 +209,9 @@ export default async function ArticlePage({
             </section>
 
             {/* PREVENTION */}
-            <section className="mt-6 border-t border-white/10 pt-6">
-              <h2 className="text-xl font-semibold">Prevention tips</h2>
-              <ul className="mt-3 list-disc ml-6 text-gray-300 space-y-2">
+            <section className="mt-6 border-t border-[#dce4d8] pt-6">
+              <h2 className="text-xl font-semibold text-[#2c4a2e]">Prevention tips</h2>
+              <ul className="mt-3 list-disc ml-6 text-[#4a5b4a] space-y-2">
                 <li>Check boiler pressure monthly</li>
                 <li>Bleed radiators each heating season</li>
                 <li>Schedule annual boiler service</li>
@@ -219,28 +219,28 @@ export default async function ArticlePage({
             </section>
 
             {/* AUTHOR BOX */}
-            <div className="mt-6 border-t border-white/10 pt-6">
+            <div className="mt-6 border-t border-[#dce4d8] pt-6">
               <AuthorBox />
             </div>
 
             {/* NEXT STEP */}
-            <section className="mt-6 border-t border-white/10 pt-6">
-              <h2 className="text-xl font-semibold">Next step</h2>
-              <p className="text-gray-300 mt-2">
+            <section className="mt-6 border-t border-[#dce4d8] pt-6">
+              <h2 className="text-xl font-semibold text-[#2c4a2e]">Next step</h2>
+              <p className="text-[#4a5b4a] mt-2">
                 If this guide didn't fully solve your issue, check related
                 heating problems.
               </p>
 
               <Link
                 href="/categories/home-problems"
-                className="inline-block mt-4 bg-indigo-600 hover:bg-indigo-500 px-6 py-3 rounded-lg"
+                className="inline-block mt-4 bg-[#2d5a2c] hover:bg-[#1f3d1e] text-white px-6 py-3 rounded-full transition-all duration-300 shadow-sm"
               >
                 Explore more fixes →
               </Link>
             </section>
 
             {/* INTERNAL LINKS */}
-            <div className="mt-6 border-t border-white/10 pt-6">
+            <div className="mt-6 border-t border-[#dce4d8] pt-6">
               <InternalLinks
                 links={[
                   {
@@ -257,8 +257,8 @@ export default async function ArticlePage({
 
             {/* RELATED */}
             {related.length > 0 && (
-              <section className="mt-6 border-t border-white/10 pt-6">
-                <h2 className="text-xl font-semibold">Related guides</h2>
+              <section className="mt-6 border-t border-[#dce4d8] pt-6">
+                <h2 className="text-xl font-semibold text-[#2c4a2e]">Related guides</h2>
 
                 <div className="flex flex-col mt-2">
                   {related.map((r) => (
@@ -283,8 +283,8 @@ export default async function ArticlePage({
           {/* SIDEBAR */}
           <aside className="lg:col-span-4">
             <div className="sticky top-6 space-y-6">
-              <div className="bg-[#111827] border border-white/10 rounded-2xl p-5">
-                <h2 className="font-semibold mb-3">Contents</h2>
+              <div className="bg-white border border-[#dce4d8] rounded-2xl p-5 shadow-sm">
+                <h2 className="font-semibold text-[#2c4a2e] mb-3">Contents</h2>
 
                 {headings.length > 0 ? (
                   <ul className="space-y-2 text-sm">
@@ -299,7 +299,7 @@ export default async function ArticlePage({
                         <li key={i}>
                           <a
                             href={`#${id}`}
-                            className="block text-gray-400 hover:text-white transition"
+                            className="block text-[#4a5b4a] hover:text-[#2d5a2c] transition"
                           >
                             {h.replace("##", "").trim()}
                           </a>
@@ -308,7 +308,7 @@ export default async function ArticlePage({
                     })}
                   </ul>
                 ) : (
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-[#6b7c6b] text-sm">
                     No sections available
                   </p>
                 )}

@@ -52,6 +52,7 @@ body {
   font-size: 1.08rem;
   line-height: 1.75;
   color: var(--foreground);
+  max-width: none;
 }
 
 /* Headings hierarchy */
@@ -91,7 +92,8 @@ body {
 .prose hr {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  border-color: rgba(45, 90, 44, 0.15);
+  border: 0;
+  border-top: 1px solid rgba(45, 90, 44, 0.15);
 }
 
 /* Lists readability */
@@ -110,6 +112,10 @@ body {
 .prose li {
   margin: 0.25rem 0;
   color: #4a5b4a;
+}
+
+.prose li::marker {
+  color: #2d5a2c;
 }
 
 .prose ul ul {
@@ -155,6 +161,51 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin: 1.5rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables inside prose */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid rgba(45, 90, 44, 0.15);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: #f0ede5;
+  color: #2c4a2e;
+  font-weight: 600;
+}
+
+/* Code blocks */
+.prose code {
+  background-color: #f0ede5;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #2d5a2c;
+}
+
+.prose pre {
+  background-color: #f0ede5;
+  padding: 1rem;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #3a4a3a;
 }
 
 /* =========================
@@ -190,6 +241,21 @@ button:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background-color: #2d5a2c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1f3d1e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(45, 90, 44, 0.2);
 }
 
 /* =========================
@@ -235,4 +301,25 @@ button:focus-visible {
 ::-moz-selection {
   background: #2d5a2c;
   color: white;
+}
+
+/* =========================
+   ADDITIONAL HOMETOPIA STYLES
+========================= */
+
+/* Smooth transitions for cards and interactive elements */
+.card-hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Subtle border glow for focused elements */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 90, 44, 0.3);
+  border-radius: 8px;
 }
