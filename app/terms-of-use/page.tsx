@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function TermsOfUsePage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-2">
 
         {/* HEADER */}
         <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">

@@ -8,6 +8,7 @@ const BASE_URL =
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getHomeProblemPosts();
 
+  // Artykuły (dynamiczne)
   const articleUrls: MetadataRoute.Sitemap = posts
     .filter((post) => post?.slug)
     .map((post) => {
@@ -21,8 +22,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       };
     });
 
+  // Kalkulatory
+  const calculatorUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/calculators/paint`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/calculators/floor`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+
   return [
-    // 🏠 HOME (highest authority page)
+    // 🏠 HOME (najwyższy priorytet)
     {
       url: BASE_URL,
       lastModified: new Date(),
@@ -30,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
 
-    // 📂 CATEGORY PAGES (topical hubs)
+    // 📂 STRONY KATEGORII
     {
       url: `${BASE_URL}/categories/home-problems`,
       lastModified: new Date(),
@@ -50,7 +67,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    // 🧠 ARTICLES (SEO long tail + cluster content)
+    // 🧮 KALKULATORY
+    ...calculatorUrls,
+
+    // 📄 STATYCZNE STRONY INFORMACYJNE
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+
+    // 🧠 ARTYKUŁY (dynamiczne)
     ...articleUrls,
   ];
 }

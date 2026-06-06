@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 // Paint coverage constants (m² per liter)
 const PAINT_COVERAGE = {
@@ -94,6 +95,17 @@ export default function PaintCalculator() {
   return (
     <main className="min-h-screen bg-[#f8f6f0] py-2">
       <div className="max-w-5xl mx-auto px-4">
+
+        {/* BREADCRUMBS */}
+        <div className="mb-6">
+            <Breadcrumbs
+            items={[
+                { label: "Home", href: "/" },
+                { label: "Calculators", href: "/categories/home-calculators" },
+                { label: "Paint Calculator", href: "/calculators/paint" },
+            ]}
+            />
+        </div>
         
         {/* HEADER */}
         <div className="text-center mb-10">

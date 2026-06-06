@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 // Flooring material types with coverage factors and waste percentages
 const FLOORING_TYPES = {
@@ -112,6 +113,17 @@ export default function FlooringCalculator() {
   return (
     <main className="min-h-screen bg-[#f8f6f0] py-2">
       <div className="max-w-5xl mx-auto px-4">
+
+        {/* BREADCRUMBS */}
+        <div className="mb-6">
+            <Breadcrumbs
+            items={[
+                { label: "Home", href: "/" },
+                { label: "Calculators", href: "/categories/home-calculators" },
+                { label: "Floor Calculator", href: "/calculators/floor" },
+            ]}
+            />
+        </div>
         
         {/* HEADER */}
         <div className="text-center mb-10">

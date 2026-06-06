@@ -7,16 +7,18 @@ const BASE_URL =
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // 🤖 GLOBAL RULE (Google + Bing)
+      // 🤖 GLOBALNA REGUŁA (dla wszystkich robotów)
       {
         userAgent: "*",
         allow: [
           "/",
           "/home-problems/",
           "/categories/",
+          "/calculators/",
           "/about",
           "/contact",
           "/privacy-policy",
+          "/terms-of-use",
         ],
         disallow: [
           "/api/",
@@ -27,7 +29,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
 
-      // 🔍 EXTRA CONTROL (Googlebot fine-tuning)
+      // 🔍 GOOGLEBOT (dodatkowa optymalizacja)
       {
         userAgent: "Googlebot",
         allow: "/",
@@ -37,11 +39,19 @@ export default function robots(): MetadataRoute.Robots {
           "/admin/",
           "/private/",
         ],
-        crawlDelay: 0,
+      },
+
+      // 🤖 BINGBOT (opcjonalnie)
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+        disallow: [
+          "/api/",
+          "/_next/",
+          "/admin/",
+        ],
       },
     ],
-
     sitemap: `${BASE_URL}/sitemap.xml`,
-    host: BASE_URL,
   };
 }

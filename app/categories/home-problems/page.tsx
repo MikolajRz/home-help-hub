@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getHomeProblemPosts } from "@/lib/posts";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata = {
   title: "Home Problems - Fix Household Issues | Hometopia",
@@ -13,6 +14,16 @@ export default function HomeProblemsCategoryPage() {
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
       <div className="max-w-7xl mx-auto px-4 py-2">
+
+        {/* BREADCRUMBS */}
+        <div className="mb-6">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Home Problems", href: "/categories/home-problems" },
+            ]}
+          />
+        </div>
         
         {/* HEADER */}
         <div className="mb-10">
