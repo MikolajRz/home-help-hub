@@ -143,9 +143,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col bg-[#f8f6f0] text-gray-800">
         {/* HEADER */}
-        <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#dce4d8]">
-          <Header />
-        </div>
+        <Header />
 
         {/* MAIN CONTENT */}
         <main className="flex-1 w-full">
