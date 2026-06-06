@@ -11,7 +11,7 @@ export default function GardenProblemsCategoryPage() {
   const posts = getHomeProblemPosts(); // na razie placeholder
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-12">
+    <main className="mx-auto max-w-4xl px-4 py-2">
       <h1 className="text-4xl font-bold">
         Garden Problems
       </h1>

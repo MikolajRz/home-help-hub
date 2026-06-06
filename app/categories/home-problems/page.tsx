@@ -12,7 +12,7 @@ export default function HomeProblemsCategoryPage() {
 
   return (
     <main className="min-h-screen bg-[#f8f6f0]">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         
         {/* HEADER */}
         <div className="mb-10">
