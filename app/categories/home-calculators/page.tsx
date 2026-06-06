@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function HomeCalculatorsPage() {
   return (
-    <main className="min-h-screen bg-[#f8f6f0] py-12">
+    <main className="min-h-screen bg-[#f8f6f0] py-2">
       <div className="max-w-6xl mx-auto px-4">
         
         {/* HEADER */}
