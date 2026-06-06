@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Terms of Use | Hometopia",
@@ -12,16 +13,26 @@ export default function TermsOfUsePage() {
     <main className="min-h-screen bg-[#f8f6f0]">
       <div className="max-w-4xl mx-auto px-4 py-2">
 
-        {/* HEADER */}
-        <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
-          <span className="text-sm font-medium text-[#2d5a2c]">⚖️ Legal</span>
+        {/* BREADCRUMBS */}
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Terms of Use", href: "/terms-of-use" },
+          ]}
+        />
+
+        {/* HERO (HEADER) */}
+        <div className="mb-10">
+          <div className="inline-block bg-[#2d5a2c]/10 rounded-full px-4 py-1.5 mb-4">
+            <span className="text-sm font-medium text-[#2d5a2c]">⚖️ Legal</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#2c4a2e] mb-4">
+            Terms of Use
+          </h1>
+          <p className="text-[#6b7c6b]">
+            Last updated: {new Date().toDateString()}
+          </p>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#2c4a2e] mb-4">
-          Terms of Use
-        </h1>
-        <p className="text-[#6b7c6b] mb-10">
-          Last updated: {new Date().toDateString()}
-        </p>
 
         {/* INTRO */}
         <section className="mb-10">
