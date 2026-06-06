@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 /* =========================
-   DESIGN TOKENS
+   DESIGN TOKENS - HOMETOPIA (Home & Garden)
 ========================= */
 :root {
-  --background: #0b0f19;
-  --foreground: #e5e7eb;
-  --card: #111827;
-  --muted: #9ca3af;
-  --primary: #60a5fa;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #f8f6f0;
+  --foreground: #3a4a3a;
+  --card: #ffffff;
+  --card-hover: #f0ede5;
+  --muted: #6b7c6b;
+  --primary: #2d5a2c;
+  --primary-dark: #1f3d1e;
+  --border: rgba(45, 90, 44, 0.12);
+  --accent-warm: #c4a86b;
 }
 
 @theme inline {
@@ -27,13 +30,7 @@ html {
 }
 
 body {
-  background: radial-gradient(
-      circle at top,
-      rgba(96, 165, 250, 0.10),
-      transparent 45%
-    ),
-    var(--background);
-
+  background: linear-gradient(135deg, #f8f6f0 0%, #ece6d8 100%);
   color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -44,14 +41,9 @@ body {
 }
 
 /* =========================
-   DARK MODE CONSISTENCY
+   LIGHT MODE ONLY (jasna strona - brak dark mode)
 ========================= */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Hometopia działa w jasnej kolorystyce - brak prefers-color-scheme */
 
 /* =========================
    TYPOGRAPHY (SEO READABILITY)
@@ -69,88 +61,100 @@ body {
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: #2c4a2e;
 }
 
 .prose h2 {
-  margin-top: 2rem;    /* było 3.5rem */
-  margin-bottom: 0.75rem;  /* było 1rem */
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   scroll-margin-top: 6rem;
+  color: #2c4a2e;
 }
 
 .prose h3 {
-  margin-top: 1.5rem;   /* było 2.5rem */
-  margin-bottom: 0.5rem;  /* było 0.75rem */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
   font-weight: 600;
+  color: #2c4a2e;
 }
 
-/* Paragraph spacing (very important for UX + SEO dwell time) */
+/* Paragraph spacing */
 .prose p {
-  margin: 0.75rem 0;  /* było 1.25rem */
-  color: rgba(229, 231, 235, 0.92);
+  margin: 0.75rem 0;
+  color: #4a5b4a;
 }
 
 .prose hr {
-  margin-top: 1.5rem;    /* dodaj odstęp na górze */
-  margin-bottom: 1.5rem; /* odstęp na dole (istniejący) */
-  border-color: rgba(255, 255, 255, 0.1);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-color: rgba(45, 90, 44, 0.15);
 }
 
 /* Lists readability */
 .prose ul {
-  list-style-type: disc;  /* kropki */
+  list-style-type: disc;
   margin: 0.5rem 0 0.75rem 1.5rem;
+  color: #4a5b4a;
 }
 
 .prose ol {
-  list-style-type: decimal;  /* numerki dla list numerowanych */
+  list-style-type: decimal;
   margin: 0.5rem 0 0.75rem 1.5rem;
+  color: #4a5b4a;
 }
 
 .prose li {
   margin: 0.25rem 0;
-  color: rgba(229, 231, 235, 0.9);
+  color: #4a5b4a;
 }
 
 .prose ul ul {
-  list-style-type: circle;  /* kółka dla drugiego poziomu */
+  list-style-type: circle;
   margin: 0.25rem 0 0.25rem 1.5rem;
 }
 
 .prose ul ul ul {
-  list-style-type: square;  /* kwadraty dla trzeciego poziomu */
+  list-style-type: square;
 }
 
 /* Strong emphasis */
 .prose strong {
-  color: #ffffff;
+  color: #2d5a2c;
   font-weight: 700;
 }
 
 /* Links inside content */
 .prose a {
-  color: #60a5fa;
+  color: #2d5a2c;
   text-decoration: underline;
-  text-decoration-color: rgba(96, 165, 250, 0.4);
+  text-decoration-color: rgba(45, 90, 44, 0.3);
   text-underline-offset: 3px;
   transition: all 0.2s ease;
 }
 
 .prose a:hover {
-  color: #93c5fd;
-  text-decoration-color: rgba(147, 197, 253, 0.9);
+  color: #1f3d1e;
+  text-decoration-color: rgba(45, 90, 44, 0.7);
 }
 
-/* Blockquote (optional SEO trust signal) */
+/* Blockquote */
 .prose blockquote {
-  border-left: 3px solid rgba(96, 165, 250, 0.5);
+  border-left: 3px solid #c4a86b;
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: rgba(229, 231, 235, 0.75);
+  color: #6b7c6b;
   font-style: italic;
+}
+
+/* Images inside prose */
+.prose img {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 1.5rem 0;
 }
 
 /* =========================
@@ -160,9 +164,15 @@ body {
 /* Cards consistency */
 .article-card {
   background: var(--card);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 2rem;
   border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.article-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 /* Links outside prose */
@@ -171,10 +181,10 @@ a {
 }
 
 a:hover {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
-/* Focus states (important for SEO UX + accessibility) */
+/* Focus states (accessibility) */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--primary);
@@ -185,12 +195,44 @@ button:focus-visible {
 /* =========================
    SCROLL BEHAVIOR FIX
 ========================= */
-/* remove duplicate global conflict */
 * {
   box-sizing: border-box;
 }
 
-/* optional smooth scrolling enhancement for anchors */
 :target {
   scroll-margin-top: 80px;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR (HOMETOPIA STYLE)
+========================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ece6d8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4a86b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d5a2c;
+}
+
+/* =========================
+   SELECTION COLOR
+========================= */
+::selection {
+  background: #2d5a2c;
+  color: white;
+}
+
+::-moz-selection {
+  background: #2d5a2c;
+  color: white;
 }
