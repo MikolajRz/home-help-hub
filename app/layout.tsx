@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Analytics from "@/components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#2d5a2c", // zielony kolor marki dla paska przeglądarki na mobile
+  themeColor: "#2d5a2c",
   colorScheme: "light",
 };
 
@@ -58,7 +59,6 @@ export const metadata: Metadata = {
     "radiator not heating",
   ],
 
-  // Manifest dla PWA
   manifest: "/site.webmanifest",
 
   openGraph: {
@@ -108,7 +108,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // Dodatkowe meta tagi
   category: "home improvement",
   classification: "DIY, Home Improvement, Gardening",
   referrer: "origin-when-cross-origin",
@@ -118,17 +117,15 @@ export const metadata: Metadata = {
     telephone: true,
   },
 
-  // Apple-specific
   appleWebApp: {
     capable: true,
     title: "Hometopia",
     statusBarStyle: "black-translucent",
   },
 
-  // Verification dla Google Search Console (opcjonalnie)
-  verification: {
-    google: "your-google-verification-code", // zastąp swoim kodem
-  },
+  // verification: {
+  //   google: "your-google-verification-code",
+  // },
 };
 
 export default function RootLayout({
@@ -142,18 +139,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-[#f8f6f0] text-gray-800">
-        {/* HEADER */}
         <Header />
-
-        {/* MAIN CONTENT */}
         <main className="flex-1 w-full">
           <div className="mx-auto max-w-7xl px-4 py-6">
             {children}
           </div>
         </main>
-
-        {/* FOOTER */}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
