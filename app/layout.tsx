@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const dynamic = 'force-dynamic'
+
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://home-help-hub-smoky.vercel.app";

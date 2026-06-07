@@ -1,12 +1,11 @@
 // components/Analytics.tsx
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
 // Vercel Analytics – jeśli masz zainstalowany pakiet
-// npm install @vercel/analytics @vercel/speed-insights
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -17,16 +16,15 @@ declare global {
   }
 }
 
-// Zmienne środowiskowe – ustaw własne ID w .env.local
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
 const ENABLE_VERCEL_ANALYTICS = process.env.NEXT_PUBLIC_ENABLE_VERCEL_ANALYTICS !== "false";
 const ENABLE_GOOGLE_ANALYTICS = process.env.NEXT_PUBLIC_ENABLE_GA === "true" && !!GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== "G-XXXXXXXXXX";
 
-export default function Analytics() {
+// Oddzielny komponent kliencki, który używa useSearchParams
+function GoogleAnalyticsTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Śledzenie zmian strony dla Google Analytics (ga4)
   useEffect(() => {
     if (!ENABLE_GOOGLE_ANALYTICS) return;
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
@@ -36,6 +34,11 @@ export default function Analytics() {
     });
   }, [pathname, searchParams]);
 
+  return null;
+}
+
+// Główny komponent Analytics
+export default function Analytics() {
   if (!ENABLE_VERCEL_ANALYTICS && !ENABLE_GOOGLE_ANALYTICS) {
     return null;
   }
@@ -65,13 +68,15 @@ export default function Analytics() {
               `,
             }}
           />
+          {/* TUTAJ jest kluczowa zmiana – dodajemy Suspense */}
+          <Suspense fallback={null}>
+            <GoogleAnalyticsTracker />
+          </Suspense>
         </>
       )}
 
       {/* Vercel Analytics – lekki, bez ciasteczek */}
       {ENABLE_VERCEL_ANALYTICS && <VercelAnalytics />}
-
-      {/* Vercel Speed Insights – monitorowanie wydajności */}
       {ENABLE_VERCEL_ANALYTICS && <SpeedInsights />}
     </>
   );
