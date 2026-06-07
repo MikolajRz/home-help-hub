@@ -5,8 +5,8 @@ import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
-// Vercel Analytics – jeśli masz zainstalowany pakiet
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+// Vercel Analytics – using Next.js-specific import for App Router
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 declare global {
